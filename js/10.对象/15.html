@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的浅拷贝</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 对象赋值时复制的内存地址，所以一个对象的改变直接影响另一个
+    // let obj = {
+    //     name: '后盾人',
+    //     user: {
+    //         name: 'hdcms'
+    //     }
+    // }
+    // let a = obj;
+    // let b = obj;
+    // a.name = 'lisi';
+    // console.log(b.name); //lisi
+
+
+    // 浅拷贝
+    // 1.使用for / in执行对象拷贝 值得复制
+    let obj = { name: "后盾人" };
+    let hd = {};
+    for (const key in obj) {
+        hd[key] = obj[key];
+    }
+
+    hd.name = "hdcms";
+    console.log(hd);
+    console.log(obj);
+
+
+    // 2.Object.assign 函数可简单的实现浅拷贝，
+    // 它是将两个对象的属性叠加后面对象属性会覆盖前面对象同名属性。
+    let user = {
+        name: '后盾人'
+    };
+    let hd = {
+        stu: Object.assign({}, user)
+    };
+    hd.stu.name = 'hdcms';
+    console.log(user.name);//后盾人
+
+
+    // 3.使用展示语法也可以实现浅拷贝
+    let obj = {
+        name: "后盾人"
+    };
+    let hd = { ...obj };
+    hd.name = "hdcms";
+    console.log(hd);
+    console.log(obj); 
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = {
+        name: "言言",
+        age: "23",
+        sex: "woman"
+    };
+    // 读取元素的内容
+    console.log(Object.keys(hd));
+    console.log(Object.values(hd));
+    // console.log(JSON.stringify(Object.entries(hd),null,2));
+
+    // 使用for/in遍历对象属性
+    // for (const key in hd) {
+    //     console.log(key, hd[key]);
+    // }
+
+    // for/of用于遍历迭代对象，不能直接操作对象。
+    // 但Object对象的keys/方法返回的是迭代对象。
+    // for (const key of Object.keys(hd)) {
+    //     console.log(key);
+    // }
+
+    for (const [key, value] of Object.entries(hd)) {
+        console.log(key, value);
+    }
+
+
+    // 添加DOM练习 DOM绘制
+    let lessons = [
+        {name : "js", click:23},
+        {name : "node", click:232},
+    ];
+    let ul = document.createElement('ul');
+    for (const val of lessons) {
+        let li = document.createElement('li');
+        li.innerHTML = `课程 : ${val.name} , 点击数 ：${val.click}`;
+        ul.appendChild(li);
+    }
+    document.body.appendChild(ul);
+
+</script>
+
+</html>

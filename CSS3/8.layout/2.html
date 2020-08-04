@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>布局</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            height: 3000px;
+            padding: 100px;
+        }
+
+        main div {
+            width: 300px;
+            border: solid 2px blueviolet;
+            padding: 0;
+            overflow: hidden;/* 溢出隐藏 */
+            position: relative;
+        }
+
+        main div img {
+            max-width: 300px;
+            float: left;/* 清除下面的间隙 */
+        }
+
+        main div span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: white;
+            line-height: 2em;/* 设置行高 */
+            border-radius: 50%;
+            background: blueviolet;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            box-shadow: 0 0 5px rgba(100, 100, 100, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<main>
+    <div>
+        <span>热</span>
+        <img src="../3.jpg" alt="">
+    </div>
+</main>
+
+</html>

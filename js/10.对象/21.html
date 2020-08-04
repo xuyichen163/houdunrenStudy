@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性特征</title>
+</head>
+
+<body>
+    <script>
+        // JS中可以对属性的访问特性进行控制。
+
+        // 查看属性
+        // 使用 Object.getOwnPropertyDescriptor查看对象属性的描述
+        'use strict';
+        const user = {
+            name: "艾玛",
+            age: 18
+        };
+        let desc = Object.getOwnPropertyDescriptor(user, "name");
+        console.log(desc);
+        let desc1 = JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"),null,2);
+        console.log(desc1);
+        //{"value":"艾玛","writable":true,"enumerable":true,"configurable":true}
+
+        let descs = Object.getOwnPropertyDescriptors(user);
+        console.log(descs);
+    </script>
+</body>
+
+</html>

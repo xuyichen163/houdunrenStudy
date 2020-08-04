@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>并集-交集-差集算法的实现</title>
+</head>
+<body>
+    <script>
+
+        let hd = new Set(["houdunren","yieryi","didadi"]);
+        let cms = new Set(["yieryi","duududu"]);
+
+        // 并集
+        let newSet1 = new Set([...hd,...cms]);
+        console.log(newSet1);
+
+        // 交集
+        // hd中 有存在于cms中的元素会被过滤出来
+        let newSet2 = new Set(
+            [...hd].filter(function(value){
+                return cms.has(value);
+            })
+        );
+        console.log(newSet2);
+
+        // 差集
+        let newSet3 = new Set(
+            [...hd].filter(function(value){
+                return !cms.has(value);
+            })
+        );
+        console.log( newSet3);
+    </script>
+</body>
+</html>

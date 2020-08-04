@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax异步请求任务管理</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 前台ajax文件 通过xhr的对象请求后台的数据
+    // 第一个参数是请求地址 第二个参数是请求获取数据之后的要回调函数
+    function ajax(url,callback){
+        let xhr = XMLHttpRequest();
+        xhr.open("Get",url);
+        xhr.send();
+        shr.onload() = function(){
+            if(this.status == 200){
+                callback(JSON.parse(this.response));
+            }else{
+                throw new Error("加载失败");
+            }
+        }
+    }
+</script>
+</html>

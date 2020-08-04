@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>表单的应用</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <style>
+    
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "mostserrat", sans-serif;
+            box-sizing: border-box;
+        }
+
+        ul li:nth-child(-n+3):not(:nth-child(2)) {
+            color: red;
+        }
+
+        /* input:disabled {
+            background: #ddd;
+        }
+
+        input:enabled {
+            background: grey;
+        } */
+
+        input {
+            outline: none;
+        }
+
+        input:checked+label {
+            color: blue;
+        }
+
+        input:required {
+            border: solid 1px green;
+        }
+
+        input:optional {
+            border: solid 1px red;
+        }
+
+        div{
+            width: 200px;
+            border: solid 1px #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+            唯你最深得我意，也只你最不识抬举。下一次可不可以换你褪去一身骄傲，喜欢我到疯掉
+    </div>
+    <table border="1">
+        <!-- 表格的标题 -->
+        <caption>新闻列表</caption>
+        <!-- 表格的头部 -->
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+                <th>编辑</th>
+            </tr>
+        </thead>
+        <!-- 表格的主体 -->
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>10月9号</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">003</td>
+                <td> 10月11号</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10月9号</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <!-- 表格的底部  用于对数据的汇总-->
+        <tfoot>
+            <tr>
+                <td>000</td>
+                <td>10月1号</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- <video src="" width="600" height="400" 
+    autoplay muted controls poster="nighth.jpg"></video> -->
+
+    <!-- <audio src="" controls muted preload="auto" ></audio>
+    <a href=""></a> -->
+
+    <ul>
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+        <li>101</li>
+        <li>123</li>
+    </ul>
+
+    <form action="">
+        <input type="text" disabled>
+        <input type="text">
+        <button>save</button>
+        <br>
+        <input type="radio" name="sex" id="boy" checked>
+        <label for="boy">男孩</label>
+        <input type="radio" name="sex" id="girl">
+        <label for="girl">女孩</label>
+        <input type="text" required>
+    </form>
+</body>
+
+</html>

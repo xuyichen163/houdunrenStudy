@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图集效果实例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main div{
+            box-sizing: border-box;
+            height: 200px;
+            width: 200px;
+            margin-right: 20px;
+            overflow: hidden;
+            border: solid 2px #bdc3c7;
+            transition: 0.6s;
+        }
+        main div>img{
+            width: 100%;
+            height: 100%;
+           
+        }
+        main:hover div{
+            transform: scale(0.6);
+            filter: blur(5px);
+        }
+        main:hover div:hover{
+            transform: scale(1);
+            filter:none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div><img src="img/1.jpg" alt=""></div>
+        <div><img src="img/2.jpg" alt=""></div>
+        <div><img src="img/3.jpg" alt=""></div>
+    </main>
+</body>
+
+</html>

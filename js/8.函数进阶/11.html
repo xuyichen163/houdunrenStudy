@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    // 递归打印倒三角
+    function print(num) {
+        // if (num == 0) return "";
+        // document.write("*".repeat(num) + "</br>");
+        // print(--num);
+
+        return num ? document.write("*".repeat(num) + "</br>")||print(--num) :"";
+    }
+    print(8);
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冻结对象API属性</title>
+</head>
+
+<body>
+    <script>
+        // Object.freeze 冻结对象后 不允许添加、删除、修改属性，writable、configurable都标记为false
+        "use strict";
+        const user = {
+            name: "杨韬佑",
+            age: 0
+        };
+        Object.freeze(user);
+        console.log(Object.isFrozen(user));
+        console.log(Object.getOwnPropertyDescriptors(user), null, 2);
+    </script>
+</body>
+
+</html>

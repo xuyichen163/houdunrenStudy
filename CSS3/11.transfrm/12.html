@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        main {
+            display: flex;
+            border: 3px solid #fff;
+            width: 400px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateY(45deg);
+        }
+
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #f1c40f;
+        }
+        div:nth-child(2){
+            background: #2ecc71;
+            transform: translateZ(300px);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+
+</html>

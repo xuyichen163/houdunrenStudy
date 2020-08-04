@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this在闭包中的历史遗留问题</title>
+</head>
+
+<body>
+    <script>
+        // this调用该函数的对象 
+        // 即函数在搜索this时只会搜索到当前活动对象。
+        // let hd = {
+        //     user: "悦动健身中心",
+        //     get: function () {
+
+        //         return this.user;
+        //     }
+        // };
+        // console.log(hd.get());
+
+
+        // let hd = {
+        //     user: "后盾人",
+        //     get: function () {
+        //         return function () {
+        //             return this.user;
+        //         };
+        //     }
+        // };
+        // console.log(hd.get()()); 
+        // this当前为windows  所以结果为undefined
+
+
+        let hd = {
+            user: "后盾人",
+            get: function () {
+                return () => {
+                    return this.user;
+                };
+            }
+        };
+        console.log(hd.get()()); //undefined
+    </script>
+</body>
+
+</html>

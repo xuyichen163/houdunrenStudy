@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历map方法</title>
+</head>
+
+<body>
+    <script>
+        let hd = new Map([['name', "梅玲玉"], ["age", "24"]]);
+        hd.set("adress", "广西省南宁市")
+        console.log(hd);
+
+        //输出map中所有的key值
+        console.log(hd.keys());
+
+        // 获得所有的值
+        console.log(hd.values());
+
+        // 获得所有的键值对
+        console.log(hd.entries());
+
+
+        // 循环输出键
+        for (const key of hd.keys()) {
+            console.log(key);
+        }
+
+        // 循环输出值
+        for (const value of hd.values()) {
+            console.log(value);
+        }
+
+        // 循环输出键值对
+        for (const [key,value] of hd.entries()) {
+            console.log(key+"-"+value);
+        }
+
+        hd.forEach((key,value) => {
+            console.log(key+":"+value);
+        });
+
+    </script>
+</body>
+
+</html>

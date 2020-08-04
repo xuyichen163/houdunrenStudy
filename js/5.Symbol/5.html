@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展特性与对象属性保护</title>
+</head>
+<body>
+    <script>
+        // let symbol = Symbol("this is the  first Symbol");
+        // let du = {
+        //     name : "嘟嘟嘟",
+        //     [symbol] : '嘟嘟嘟是一个好孩子'
+        // };
+
+        // 遍历
+        // Symbol 不能使用 for/in、for/of 遍历操作
+        // for (const key in du) {
+        //     console.log(key);
+        // }
+        
+        // 遍历 获取所有Symbol属性
+        // for (const key of Object.getOwnPropertySymbols(du)){
+        //     console.log(key);
+        // }
+
+        // 遍历 获取所有属性包括Symbol
+        // console.log("*".repeat(15));
+        // for (const key of Reflect.ownKeys(du)){
+        //     console.log(key);
+        // }
+
+        // 如果对象属性不想被遍历，可以使用Symbol保护
+        const site = Symbol("网站名称");
+        class User {
+            // 构造函数
+            constructor(name){
+                this[site] = '嘟嘟嘟';
+                this.name = name ;
+            }
+            getName(){
+                return `${this[site]}-${this.name}`;
+            }
+        }
+
+        let du = new User("嘟嘟嘟大大");
+        console.log(du.getName());
+        for (const key in du) {
+            console.log(key);
+        }
+        console.log(object);
+    </script>
+</body>
+</html>

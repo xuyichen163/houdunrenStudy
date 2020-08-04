@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d立体效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        a {
+            width: 200px;
+            height: 60px;
+            background: #2ecc71;
+            text-decoration: none;
+            font-size: 1.5em;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform:skewX(35deg) rotate(10deg);
+            text-transform: uppercase;
+            letter-spacing: .2em;
+        }
+
+        a::before {
+            box-sizing: border-box;
+            content: "";
+            width: 30px;
+            height: 100%;
+            background: #2ecc71;
+            position: absolute;
+            left: -30px;
+            top: 15px;
+            transform: skewY(-45deg);
+        }
+
+        a::after {
+            box-sizing: border-box;
+            content: "";
+            width: 100%;
+            height: 30px;
+            background: #2ecc71;
+            position: absolute;
+            left: -15px;
+            bottom: -30px;
+            transform: skewX(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" class="btn">Katherine</a>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 400px;
+            height: 400px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        article section {
+            order: 1;
+            flex: 1 0 100px;
+            padding: 10px;
+            background: blueviolet;
+            background-clip: content-box;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        article section div {
+            flex: 1;
+        }
+
+        article section div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        article section span {
+            flex: 0;
+            background: #000;
+            padding: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <script>
+        function up(el) {
+            el.parentElement.style.order = getOrder(el.parentElement) * 1 - 1;
+            console.log(getOrder(el.parentElement))
+        }
+
+        function getOrder(el) {
+            return getComputedStyle(el, null).order;
+        }
+    </script>
+</head>
+
+<body>
+    <article>
+        <section>
+            <div>houdunren.com</div>
+            <span onclick="up(this)">up</span>
+        </section>
+        <section>
+            <div>hdcms.com</div>
+            <span onclick="up(this)">up</span>
+        </section>
+    </article>
+</body>
+
+</html>

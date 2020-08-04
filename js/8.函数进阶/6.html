@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认参数</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    // 计算默认每年的销量
+    // function avg(total, year){
+    //     year = year || 1;//默认参数 短路运算符
+    //     return Math.round(total / year);
+    // }
+
+    // 新版本的默认参数
+    function avg(total, year = 2) {
+        return Math.round(total / year);
+    }
+    console.log(avg(2000, 5));
+    console.log(avg(2000));
+
+
+    // 通过排序来体验新版默认参数的处理方式
+    function sortArray(array, type = 'asc') {
+        return array.sort((a, b) => type == 'asc' ? a - b : b - a);
+    }
+    console.log(sortArray([1, 4, 2, 34, 23], 'desc'));
+
+    //默认参数放在后面 total:价格,discount:折扣,dis:折后折
+    function sum(total, discount = 0, dis = 0) {
+        return total * (1 - discount) * (1 - dis);
+    }
+    console.log(sum(2000, 0.2, 0.3));
+</script>
+
+</html>

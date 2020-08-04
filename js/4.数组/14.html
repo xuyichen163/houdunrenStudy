@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素查找</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,5,3,4,5,6,7,0,1];
+
+        //查看元素所在位置(从左侧)  没有为-1 严格类型匹配
+        // console.log(array.indexOf(2));
+        //查找元素 从第二个元素开始向后查找
+        console.log(array.indexOf(2,1));
+
+        //查看元素所在位置（从右侧找） 与上面的结果一致
+        // console.log(array.lastIndexOf(2));
+
+        //找到了
+        // if(array.indexOf(8) != -1){
+        //     console.log("找到了");
+        // }
+
+        //输出true or false
+        // console.log(array.includes(8));
+        
+
+    </script>
+</body>
+</html>

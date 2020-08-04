@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 图片加载是http请求 js引擎 
+    // 单线程就是js代码执行是单线程的
+
+    // 将loadImage交给一个处理模块，处理的时候添加到任务处理模块中，
+    // js代码执行 完 clg("run")之后，到任务处理模块中遍历新任务
+    function loadImag(src, resolve, reject) {
+        let image = new Image();
+        image.src = src;
+        image.onload = () => {
+            resolve(image);
+        };
+        image.onerror = () => {
+            reject(new Error("load fail"));
+        };
+
+    }
+
+    loadImag("images/nighth.jpg",
+        (image) => {
+            document.body.appendChild(image);
+            image.style.width = "500px";
+            image.style.border = "solid 2px red";
+            console.log("加载成功");
+        }, () => {
+            console.log("加载失败");
+        }
+    );
+    console.log("run");
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数创建对象的方式</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 和工厂函数相似构造函数也用于创建对象，它的上下文为新的对象实例。
+
+    // 构造函数名每个单词首字母大写即Pascal 命名规范
+    // this指当前创建的对象
+    // 不需要返回this系统会自动完成
+    // 需要使用new关键词生成对象
+
+    // function Student(name) {
+    //     this.name = name;
+    //     this.show = function () {
+    //         console.log(this.name);
+    //     }
+    //     //不需要返回，系统会自动返回
+    //     // return this;
+    // }
+    // const lisi = new Student("李四");
+    // lisi.show();
+    // const xj = new Student("向军");
+    // xj.show();
+
+    "use strict";
+    function User() {
+        this.show = function () {
+            console.log(this);
+        };
+    }
+    let hd = new User();
+    hd.show(); //User
+
+    let xj = hd.show;//this 当前是 window
+    xj(); //undefined
+</script>
+
+</html>

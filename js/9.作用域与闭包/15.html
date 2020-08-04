@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的内存泄漏解决方法</title>
+</head>
+
+<body>
+    <div desc="嘟嘟嘟1"> 嘟嘟嘟嘟1</div>
+    <div desc="嘟嘟嘟2"> 嘟嘟2</div>
+
+    <script>
+        // 闭包特性中上级作用域会为函数保存数据，
+        // 从而造成的如下所示的内存泄漏问题
+        let divs = document.querySelectorAll('div');
+        divs.forEach(function(item){
+            // 只获取值  不保留对象
+            let desc = item.getAttribute("desc")
+            item.addEventListener('click',function(){
+                // console.log(item.getAttribute("desc"));
+                console.log(desc);
+                // console.log(item);
+            })
+            item = null;
+        })
+
+    </script>
+</body>
+
+</html>

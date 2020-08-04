@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性和assign</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = {};
+    // let name = "title";
+    // hd[name]="星星";
+    // console.log(hd.title);
+
+    // let id = 0;
+    // let hd = {};
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // console.log(hd);
+
+    // 使用计算属性为文章定义键名
+    // const lessons = [
+    //     {
+    //         title: "媒体查询响应式布局",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "FLEX 弹性盒模型",
+    //         category: "css"
+    //     },
+    //     {
+    //         title: "MYSQL多表查询随意操作",
+    //         category: "mysql"
+    //     }
+    // ];
+    // let lessonObj = lessons.reduce((obj, cur, index) => {
+    //     obj[`${cur["category"]}-${index + 1}`] = cur;
+    //     return obj;
+    // }, {});
+
+    // // console.log(lessonObj);
+    // console.log(JSON.stringify(lessonObj, null, 2));
+    
+    // assing合并属性
+    "use strict";
+    let hd = { a: 1, b: 2 };
+    hd = Object.assign(hd, { f: 1 }, { m: 9 });
+    console.log(hd); //{a: 1, b: 2, f: 1, m: 9}
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>边界的效果</title>
+    <style>
+        main{
+            width: 100vw;
+            background: #bbb;
+        }
+        h2 {
+            height: 30px;
+            margin: 5px;
+            border: none;
+        }
+
+        h2:nth-child(1) {
+            border: none;
+        }
+
+        h2:nth-child(2) {
+            border: dotted 10px #2980b9;
+        }
+
+        h2:nth-child(3) {
+            border: dashed 10px #3498db;
+        }
+
+        h2:nth-child(4) {
+            border: solid 10px #7f8c8d;
+        }
+
+        h2:nth-child(5) {
+            border: double 10px #16a085;
+        }
+
+        h2:nth-child(6) {
+            border: groove 10px #95a5a6;
+        }
+
+        h2:nth-child(7) {
+            border: ridge 10px #2ecc71;
+        }
+
+        h2:nth-child(8) {
+            border: inset 10px #d35400;
+        }
+
+        h2:nth-child(9) {
+            border: outset 10px rgb(236, 127, 37);
+        }
+
+        div {
+            background: #d35400;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>1.none</h2>
+        <h2>2.dotted</h2>
+        <h2>3.dashed</h2>
+        <h2>4.solid</h2>
+        <h2>5.double</h2>
+        <h2>6.groove</h2>
+        <h2>7.ridge</h2>
+        <h2>8.inset</h2>
+        <h2>9.outset</h2>
+        <div>
+            www.baidu.com
+        </div>
+        <div>
+            www.baidu.comwww.baidu.comwww.baidu.comwww.baidu.com
+        </div>
+    </main>
+
+</body>
+
+</html>

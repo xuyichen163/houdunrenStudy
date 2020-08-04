@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拆分/合并</title>
+</head>
+<body>
+    <script>
+        let array = "1,2,3,4,5,6,7";
+        // console.log(array);
+        let hd = array.split(",");
+        console.log(hd);
+        // console.log(hd.join("-"));
+
+        // let h1 = ["houdnren","dududu"];
+        // let h2 = [1,2,3,4,5];
+        //先连接后合并
+        // h1 =[...h1,...h2];
+        // console.log(h1.join("-"));
+
+        // h1 = h1.concat(h2);
+        // console.log(h1.join("-"));
+
+        //内部复制 从0开始计数 第一个参数是复制到的起始位置即第2个位置 复制内容是从第2个参数到第3个参数前
+        console.log(hd.copyWithin(2,0,2));  
+        //结果是 ["1", "2", "1", "2", "5", "6", "7"]
+      
+
+
+        
+    </script>
+</body>
+</html>

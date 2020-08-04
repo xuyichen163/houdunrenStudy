@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>登录效果</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "mostserrat", sans-serif;
+            box-sizing: border-box;
+        }
+
+        main{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 5px silver;
+        }
+
+        div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            /* transform: translate(-50%,-50%); */
+            width: 200px;
+            height: 200px;
+        }
+
+        div:nth-child(1) {
+            background: #2ecc71;
+            /* 右移 */
+            /* transform: translateX(100px); */
+            
+            
+        }
+
+        div:nth-child(2) {
+            background: #e67e22;
+            /* 过渡 */
+            transition: 1.5s;
+        }
+
+        main:hover div:nth-child(2) {
+            /* 正数往右移动 负数往左移动 */
+            transform: translateX(200px);
+            /* 正数往下移动 负数往上移动 */
+            transform: translateY(-100%);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+        <a href=""></a>
+    </main>
+</body>
+
+</html>

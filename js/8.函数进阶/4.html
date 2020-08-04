@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数和块作用域解决冲突</title>
+</head>
+
+<body>
+</body>
+<script src="4.1.js"></script>
+<script src="4.2.js"></script>
+<script>
+    // 立即执行函数
+    // (function(){
+    //     console.log("123");
+    // })();
+    // 后面4.2js会覆盖前面的4.1js 所以无法调用4.1js的内容
+    // hd(); //4.2.js- hd
+
+    js1.hd();
+    
+    js2.hd();
+</script>
+
+</html>

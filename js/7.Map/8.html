@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weakmap的弱引用类型</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = {name: '后盾人'};
+    // 赋值地址 hd和cms同时指向对象
+    let cms = hd ;
+    // 当对象不再被引用 正常情况下 对象成为垃圾 则被删除
+
+    let map = new WeakMap();
+    map.set(hd,"houdunren");
+    hd = null;
+    cms = null;
+    console.log(map);
+    setTimeout(function(){
+        console.log(map);
+    }, 1000);
+</script>
+
+</html>

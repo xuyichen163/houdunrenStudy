@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet">
+    <title>移动端试图切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        body::after{
+            content: "404.html";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 3em;
+            opacity: .5;
+        }
+        main {
+            flex: 1;
+            background: #eee;
+            position: relative;
+        }
+
+
+        nav {
+            height: 8vh;
+            width: 100%;
+            background: #223344;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: white;
+            opacity: .8;
+            text-transform: uppercase;
+            flex: 1;
+            text-align: center;
+        }
+
+        nav a:nth-child(2) {
+            border-right: solid 1px silver;
+            border-left: solid 1px silver;
+        }
+
+        main>div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: 1s;
+            z-index: 1;
+        }
+
+        main div:target {
+            transform: translateY(0);
+        }
+
+        main>div:nth-child(1):target {
+            background: #27ae60;
+
+        }
+
+        main>div:nth-child(2):target {
+            background: #3498db;
+        }
+
+        main>div:nth-child(3):target {
+            background: #f39c12;
+        }
+
+        i[class^="fa"] {
+            font-size: 6em;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="home">
+            <i class="fa fa-home" aria-hidden="true"></i>
+        </div>
+        <div id="video">
+            <i class="fa fa-ban" aria-hidden="true"></i>
+        </div>
+        <div id="live">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+        </div>
+    </main>
+    <nav><a href="#home">home</a>
+        <a href="#video">vido</a>
+        <a href="#live">live</a>
+    </nav>
+</body>
+
+</html>

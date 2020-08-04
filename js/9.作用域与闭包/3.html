@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>延伸函数环境生命周期</title>
+</head>
+
+<body>
+    <script>
+        function hd() {
+            let n = 1;
+            return function sum() {  //被外部引用
+                console.log(++n);
+            }
+            sum();
+        }
+        // 每次调用都是生成一个新的内存地址
+        // hd();
+
+        // 现在有sum函数的值被使用 则hd内的就不会清除 所以会保留 
+        let a = hd();
+        // 函数运行结束 n = 2
+        a();
+        // 函数运行结束 n = 3;
+        a();
+
+        // 每次调用都是生成一个新的内存地址
+        let b = hd();
+        // 函数运行结束 n = 2
+        b();
+        // 函数运行结束 n = 3;
+        b();
+
+        console.log("2".repeat(19));
+        // 如果子函数被使用时父级环境将被保留
+        function hdu() {
+            let n = 1;
+            return function sum() {
+                let m = 1;
+                return function show() {
+                    console.log("m:"+ ++m);
+                    console.log("n:"+ ++n);
+                }
+            }
+            sum();
+        }
+        let c = hdu()();
+        c();
+        c();
+    </script>
+</body>
+
+</html>

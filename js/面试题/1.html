@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最长不重复子串</title>
+</head>
+
+<body>
+    <div>找出字符串中不含相同字母的最长子串</div>
+    <script>
+        var Substring = "abbbdacde";
+
+        function show(s) {
+            var str = '';//存放当前最大无重复项字符串
+            var len = 0;//存放当前当前最大无重复项字符串长度
+            for (var i = 0; i < s.length; i++) {
+                var char = s.charAt(i); //获得对应位置的字符
+                var index = str.indexOf(char); //新字符串中的位置 有为对应位置 无则为-1
+                console.log("i:" + i);
+                console.log("index:" + index);
+                if (index === -1) {  //遍历s将元素挨个放入到str中，每放入一次判断str中是否有重复项
+                    str += char;
+                    console.log("char：" + char);
+                    len = len < str.length ? str.length : len;//记录最大长度项,每次重新记录str进行判断，是否大于上次一次最大项
+                    console.log("len:" + len);
+                }
+                else { //重复了
+                    str = str.substr(index + 1) + char; //从当前重复项开始重新记录str
+                }
+                console.log("str:" + str);
+                console.log("##############################");
+            }
+            return str;
+        }
+        console.log(show(Substring));
+    </script>
+</body>
+
+</html>

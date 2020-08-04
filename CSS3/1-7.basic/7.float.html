@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>浮动</title>
+
+    <style>
+        main {
+            border: solid 2px black;
+            width: 620px;
+            margin: 0 auto;
+            padding: 20px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        /* main::after {
+            content: "";
+            clear: both;
+            display: block;
+        } */
+
+        div {
+            width: 300px;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        div:nth-child(1) {
+            border: solid 3px red;
+            float: left;
+        }
+
+        div:nth-child(2) {
+            background: blue;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性的基本操作方法</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 对象是属性和方法的集合即封装
+    // 将复杂功能隐藏在内部，只开放给外部少量方法，更改对象内部的复杂逻辑不会对外部调用造成影响即抽象
+    // 继承是通过代码复用减少冗余代码
+    // 根据不同形态的对象产生不同结果即多态
+    // let user = {
+    //     name: "孙小菲",
+    //     "my age": 18,
+    // };
+    // console.log(user.name);
+    // console.log(user['name']);
+    // console.log(user['my age']);
+
+    // // 遍历
+    // for (const key in user) {
+    //     console.log(user[key]);
+    // }
+
+    // //可动态添加属性
+    // user.age = 20;
+    // user.get = function () {
+    //     return `${this.name}的年龄是${this.age}`;
+    // }
+    // console.log(user.get());
+    // console.log(user);
+
+
+    let user = {
+        name: "艾玛",
+        age : 20,
+        grade: [
+            { lessons: "js", score: 99 },
+            { lessons: "css", score: 90 },
+        ],
+        average: function (grade, name) {
+            const total = grade.reduce((t, l) => t + l.score, 0);
+            return total / grade.length;
+        },
+    }
+</script>
+
+</html>

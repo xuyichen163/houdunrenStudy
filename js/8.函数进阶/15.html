@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数和方法中的this不同</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 使用函数来解析标签字符串，
+    // 第一个参数是字符串值的数组，其余的参数为标签变量。
+    function hd(str, ...values) {
+        console.log(str); //["站点", "-", "", raw: Array(3)]
+        console.log(values); //["后盾人", "houdunren.com"]
+    }
+    let name = '后盾人', url = 'houdunren.com';
+    hd`站点${name}-${url}`;
+</script>
+
+</html>

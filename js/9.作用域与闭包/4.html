@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数也是很好的环境例子，子函数被外部使用 父级环境将被保留
+        function hd() {
+            let n = 1;
+            this.sum = function () {
+                console.log(++n);
+            };
+        }
+        let a = new hd();
+        //a 内有属性 sum 其值为函数的值 被外面使用 则其同作用域下的值n也会被保留
+        console.log(a);
+        a.sum();
+        a.sum();
+
+        let b = new hd();
+        console.log(b);
+        b.sum();
+        b.sum();
+    </script>
+</body>
+
+</html>

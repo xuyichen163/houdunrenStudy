@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明定义Symbol的几种方式</title>
+</head>
+
+<body>
+    <script>
+        // let hd = Symbol();
+        // let du = Symbol();
+        // console.log(hd == du);
+
+        // Symbol 不可以添加属性
+        // hd.name = "dududu";
+        // console.log(hd.name);  //undefined
+
+        // symbol当做一个永远不会重复的字符串
+
+        //后面可加入描述文字
+        // let hd = Symbol("第一个 symbol ");
+        // let du = Symbol("第二个 symbol ");
+        // console.log(hd);
+        // console.log(hd.description); //读出后面的属性
+
+        //symbol.for
+        // 根据描述获取Symbol，如果不存在则新建一个Symbol
+        // 使用Symbol.for会在系统中将Symbol登记  使用Symbol则不会登记
+        let xiaoyi = Symbol.for("xiaoyi");
+        let juzhudi = Symbol.for("xiaoyi");
+        //比对的时候 先去内存里找一是不是有一个叫xiaoyi的symbol 如果是就拿出来
+        console.log(xiaoyi == juzhudi);
+        // Symbol.keyFor 根据使用Symbol.for登记的Symbol返回描述，如果找不到返回undefined 
+        console.log(Symbol.keyFor(xiaoyi)); //获得描述内容
+    </script>
+</body>
+
+</html>

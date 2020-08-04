@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历set类型的方式</title>
+</head>
+<body>
+    <script>
+        // 使用 keys()/values()/entries() 都可以返回迭代对象，
+        // 因为set类型只有值所以 keys与values 方法结果一致
+        let set = new Set(["chenyansi","katherine"]);
+        console.log(set.values());
+
+        //使用forEach遍历
+        set.forEach(function(value,index,arr){
+            console.log(value,index);
+        })
+        console.log("#".repeat(20));
+
+        
+        // 使用forof遍历
+        for (const value of set.values()) {
+            console.log(value);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数与arguments</title>
+</head>
+
+<body>
+    <button id="but">聚香园</button>
+</body>
+<script>
+
+    // 函数可以作为参数
+    function hd(a) {
+        return a <= 3;
+    };
+    let arr = [1, 2, 3, 4, 5].filter(hd);
+    console.table(arr);
+
+    let i = 0;
+    // setInterval(function(){
+    //     console.log(++i);
+    // },1000);
+
+    // 上面函数可以转换为
+    function cms() {
+        console.log(++i);
+    }
+    // setInterval(cms, 1000);
+
+    // 一个作为参数被使用的函数就是回调函数
+
+    // document.getElementById("but").addEventListener("click",function(){
+    //     alert(this.innerHTML);
+    // })
+
+    function alertHtml() {
+        alert(this.innerHTML);
+    }
+    document.getElementById("but").addEventListener("click", alertHtml)
+
+    // arguments 是函数获得到所有参数集合，将参数放在arguments中
+    // 下面是使用 arguments 求和的例子
+    function sum() {
+        return [...arguments].reduce((a, b) => a + b);
+    }
+
+    console.log(sum(1, 2, 3, 4, 34, 41, 5, 3, 43));
+</script>
+
+</html>

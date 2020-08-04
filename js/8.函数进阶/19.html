@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call 与 apply </title>
+</head>
+
+<body>
+    <button id="but1">hd</button>
+    <button id="but2">cms</button>
+
+</body>
+<script>
+    // call与apply 用于显示的设置函数的上下文，
+    // 两个方法作用一样都是将对象绑定到this，只是在传递参数上有所不同。
+
+    // apply 用数组传参
+    // call 需要分别传参
+    // 与 bind 不同 call / apply 会立即执行函数
+
+    // let lisi = {
+    //     name: '李四'
+    // };
+    // let wangwu = {
+    //     name: '王五'
+    // };
+
+    // function User() {
+    //     console.log(this.name);
+    // }
+    // User.call(lisi);//李四
+    // User.apply(lisi);//李四
+
+    // function User(web, url) {
+    //     console.log(web + url + this.name);
+    // }
+    // User.call(lisi, "web1", "hdcms.com");//李四
+    // User.apply(lisi, ["web1", "hdcms.com"]);//李四
+
+
+    // 点击按钮弹出按钮的文字
+    // function show(){
+    //     alert(this.innerHTML);
+    // }
+    // let buttons = document.querySelectorAll('button');
+    // buttons.forEach((item)=>{
+    //     // console.log(item);
+    //     item.addEventListener("click",(event)=>{
+    //         show.call(event.target);
+    //     })
+    // })
+
+    // 获取最大值
+    // console.log(Math.max(1, 2, 3, 4, 5));
+    let arr = [1, 3, 4, 5, 6, 9];
+    // No.1
+    console.log(Math.max(...arr));
+    // No.2
+    console.log(Math.max.apply(Math,arr));
+
+</script>
+
+</html>

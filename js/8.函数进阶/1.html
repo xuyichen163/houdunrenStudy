@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数声明</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // let str = new String("hdcms.com");
+    // console.log(str);
+    let hd2 = new Function("title", "console.log(title)");
+    hd2('后盾人');
+
+    function hd(title){
+        console.log(title);
+    }
+    hd("yier");
+
+    let cms = function(title){
+        console.log(title);
+    };
+
+    let user = {
+        name : null,
+        setUserName:function(name){
+            this.name = name;
+        },
+        getUserName:function(){
+            return this.name;
+        }
+    }
+
+    user.setUserName("katherine");
+    console.log(user.getUserName());
+</script>
+
+</html>

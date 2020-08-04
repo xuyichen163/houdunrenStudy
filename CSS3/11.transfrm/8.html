@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新年贺卡</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            background: #e74c3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(900px) rotateX(30deg);
+        }
+
+        .card::after,
+        .card::before {
+            background: #000;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: 2s;
+            box-sizing: border-box;
+        }
+
+        .card::before {
+            content: "新年";
+            left: 0;
+            background: #2980b9;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            transform-origin: left;
+            border-right: solid 1px #eee;
+            padding-right: 10px;
+        }
+
+        .card::after {
+            content: "快乐";
+            right: 0;
+            background: #2980b9;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transform-origin: right;
+            padding-left: 10px;
+            border-left: solid 1px #eee;
+        }
+
+        .card:hover::before {
+            transform: rotateY(-180deg);
+        }
+
+        .card:hover::after {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            katherine
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>item</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        article {
+            margin: 0 auto;
+            border: solid 2px #222;
+            width: 400px;
+            height: 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            /* justify-content: space-between;
+            align-content: end; */
+            justify-items: center;;
+            align-items: end;
+        }
+
+        div {
+            background: blueviolet;
+            padding: 10px;
+            /* height: 80px; */
+            color: white;
+            background-clip: content-box;
+            font-size: 24px;
+            box-sizing: border-box;
+            border: 1px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </article>
+</body>
+
+</html>

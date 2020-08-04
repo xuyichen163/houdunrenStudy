@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKEN的读写处理</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let Request = {
+            set token(content) {
+                localStorage.setItem('token', content);
+            },
+            get token() {
+                let token = localStorage.getItem('token');
+                // 如果获取不到
+                if (!token) {
+                    alert("请登录后获取token");
+                }
+                else {
+                    return token;
+                }
+            }
+        }
+        Request.token = 'houdunren'
+        console.log(Request.token);
+    </script>
+</body>
+
+</html>

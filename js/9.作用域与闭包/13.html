@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画为什么会加速</title>
+    <style>
+        button {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button message="中国石油大学（华东）">中国石油大学（华东）</button> -->
+    <button message="东南大学 ">东南大学</button>
+    <script>
+        let btns = document.querySelectorAll('button');
+        btns.forEach(function (item, index) {
+            let interval = false;
+            // 只有第一次点击下面函数运行 --节流
+            item.addEventListener('click', function () {
+                if (!interval) {
+                    let left  = 1;
+                    interval = true;
+                    // 每隔5毫秒做一次移动
+                    setInterval(function () {
+                        item.style.left = left++ + "px";
+                    }, 100);
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

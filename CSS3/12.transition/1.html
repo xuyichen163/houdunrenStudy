@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滑动效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        div::before {
+            content: "苏打绿";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            color: white;
+            font-size: 2em;
+            background: #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 2s;
+            cursor: pointer;
+        }
+
+        div:hover::before {
+            transform: rotate(360deg);
+        }
+
+        div::after {
+            content: "sudagreen";
+            position: absolute;
+            bottom: -55px;
+            width: 200px;
+            text-align: center;
+            color: #2ecc71;
+            font-size: 1.5em;
+            transform: translateX(-999px);
+            transition: 1s;
+        }
+
+        div.move::after {
+            transform: translateX(0px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+    <script>
+        document.querySelector('div').addEventListener('transitionend', function (e) {
+            console.log(e);
+            document.querySelector('div').className='move';
+
+        })
+    </script>
+</body>
+
+</html>

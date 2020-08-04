@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>hdcms</div>
+    <div>dududu</div>
+    <script>
+        //获得所有的div节点
+        let divs = document.querySelectorAll('div');
+        // console.log(divs);
+        console.log(Array.from(divs,function(item){
+            // console.log(item.innerHTML);
+            item.style.backgroundColor = "yellow";
+            return item;
+        }));
+
+
+        //判断是否是数组 Array.isArray()
+        // console.log(Array.isArray([2,3,4]));
+
+        //数组变成字符串
+        // let hd = [1,2,3,4,4].toString();
+        // console.log(typeof hd);
+        // console.log(hd);
+        //或
+        // let hd1 = String([1,2,3,4,4]);
+        // console.log(typeof hd1);
+        // console.log(hd1);
+        //连接使用
+        // let hd2 = [1,2,3,4,4].join("-");
+        // console.log(typeof hd2);
+        // console.log(hd2);
+
+        // console.log(location.href+"?id"+hd2);
+
+        //拆分 转换为数组
+        // let str="hdcms,sefhuishefi";
+        // console.log(str.split(","));
+        //有 length 属性就可以使用 Array.from（）转换为数组
+        // console.log(Array.from(str)); 
+
+        // let obj={
+        //     0:"123",
+        //     1:"dududu",
+        //     length:2
+        // }
+        // console.log(Array.from(obj));
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

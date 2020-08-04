@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值新增特性</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let user = { name: "景绣", age: 29 };
+    let { name: n, age: a } = user;
+    console.log(`n:${n} , a:${a}`);
+    //如果属性名与变量相同可以省略属性定义
+    let { name, url } = { name: '后盾人', url: 'houdunren.com' };
+    console.log(name); // 后盾人
+
+    // 函数返回值直接解构到变量
+    // function hd() {
+    //     return {
+    //         name: '后盾人',
+    //         url: 'houdunren.com'
+    //     };
+    // }
+    // let { name: n, url: u } = hd();
+    // console.log(n);
+
+    "use strict";
+    function hd({ name, age }) {
+        console.log(name, age); //向军大叔 18
+    }
+    hd({ name: "向军", age: 18 });
+    
+    // 系统函数解构练习
+    const { random } = Math;
+    console.log(random());
+</script>
+
+</html>

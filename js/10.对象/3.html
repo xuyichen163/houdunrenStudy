@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的引用地址</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let  user = {};
+    // let hd = user;
+    // // user 和 hd 共用地址 
+    // user.name = '消毒'
+    // console.log(hd.name); //消毒
+
+    // 对象做为函数参数使用时也不会产生完全赋值，内外共用一个对象
+    // let user = { age: 22 };
+    // function hd(user) {
+    //     user.age += 10;
+    // }
+    // hd(user);
+    // console.log(user.age); //32
+
+    // let hd = {};
+    // let xj = hd;
+    // let cms = {};
+    // console.log(hd == xj); //true 强制类型转换比较
+    // console.log(hd === xj); //true 不强制类型转换比较
+    // console.log(hd == cms); //false
+    // console.log(hd === cms); //false
+
+    // this
+    // this 指当前对象的引用，始终建议在代码内部使用this 
+    // 而不要使用对象名，不同对象的this只指向当前对象。
+    
+    // let xj = {
+    //     name: "向军",
+    //     show() {
+    //         return xj.name;
+    //     }
+    // };
+    // let hd = xj;
+    // xj = null;
+    // console.log(hd.show()); //Error
+
+    let xj = {
+        name: "向军",
+        show() {
+            return this.name;
+        }
+    };
+    let hd = xj;
+    xj = null;
+    console.log(hd.show()); //Error
+</script>
+
+</html>

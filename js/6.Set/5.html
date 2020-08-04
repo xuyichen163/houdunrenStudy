@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用set处理网站关键词</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 200px;
+        }
+
+        input {
+            width: 200px;
+            border: solid 1px black;
+            outline: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            width: 200px;
+            padding-top: 20px;
+        }
+
+        ul li {
+            border: solid 1px #ddd;
+            padding: 10px;
+            margin-bottom: -1px;
+        }
+        ul li:nth-of-type(odd){
+            background: #00b894;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="hd">
+    <ul></ul>
+
+    <script>
+
+        // 涉及到数据部分
+        let obj = {
+            data: new Set(),
+            //添加数据到data
+            set keyword(word) {
+                this.data.add(word);
+            },
+            //显示数据到ul中
+            show() {
+                //找到对应的元素
+                let ul = document.querySelector("ul");
+                //清空ul的元素
+                ul.innerHTML = "";
+                //data的数据在ul中显示出来
+                this.data.forEach(function (value) {
+                    ul.innerHTML += ` <li>${value}</li>`;
+                });
+            }
+        };
+
+        //input添加监听事件 
+        let input = document.querySelector("[name='hd']");
+        input.addEventListener('blur', function () {
+            obj.keyword = this.value;
+            obj.show();
+        });
+        
+    </script>
+</body>
+
+</html>

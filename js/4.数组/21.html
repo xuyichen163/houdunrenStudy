@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["dududu", "dididi", 'nanana'];
+        // keys 获得索引迭代器
+        // let keys = arr.keys();
+        // console.log(keys);
+
+        //false 表示后面还有数据
+        //value 表示索引
+        // console.log(keys.next()); 
+        // console.log(keys.next()); 
+        // console.log(keys.next()); 
+        // console.log(keys.next());  
+
+        // let{value,done} = keys.next();
+        // console.log(value);
+
+        // keys 获得值迭代器
+        let values = arr.values();
+        // console.log(values);
+        // let { value, done } = values.next();
+        // console.log(value, done);
+
+        // 用while 迭代数组
+        // while (({value, done} = values.next()) && done === false) {
+        //     console.log(value);
+        // }
+
+        // for(const value of arr.values()){
+        //     console.log(value);
+        // }
+
+        // for(const keys of arr.keys()){
+        //     console.log(keys);
+        // }
+
+        // let entries = arr.entries();
+        // console.log(entries.next());
+        // console.log(entries.next());
+        for (const [key,value] of arr.entries()) {
+            console.log(key,value);
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>every some</title>
+</head>
+
+<body>
+    <input type="text " name="title">
+    <span></span>
+
+    <script>
+        // const users = [
+        //     { name: '李四', js: 85 },
+        //     { name: '赵三', js: 66 },
+        //     { name: '王五', js: 45 },
+        //     { name: '季二', js: 98 },
+        // ];
+        // //判断所有学生是不是都及格了
+
+        //every 用于递归的检测元素，要所有元素操作都要返回真结果才为真。
+        // const result = users.every(function (item) {
+        //     return item.js >= 60;
+        // });
+        // console.log(result ? "全部同学都及格了" : "有同学没及格");
+
+        //使用 some 函数可以递归的检测元素，如果有一个返回true，表达式结果就是真。
+        //第一个参数为元素，第二个参数为索引，第三个参数为原数组。
+        // const res = users.some(function(item){
+        //     return item.js >= 90;
+        // })
+        // console.log(res ? "有成绩大约90分的同学" : "全部同学的成绩低于90分" );
+
+        let keywords = ["php", 'js', 'css'];
+        let title = document.querySelector('[name = "title"]');
+        title.addEventListener('keyup', function () {
+            let res = keywords.some(keyword => {
+                return this.value.indexOf(keyword)!= -1;
+            });
+            document.querySelector('span').innerHTML = res ? "输入正确": "必须包含"+keywords.join("-")+"关键词" ;
+        });
+    </script>
+</body>
+
+</html>

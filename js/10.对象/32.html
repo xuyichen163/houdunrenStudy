@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy代理拦截</title>
+</head>
+
+<body>
+    <script>
+        // 访问器 对单个对象的属性进行控制
+        // 代理对整个对象进行控制  类似于中介 
+        // 读写属性时代码更简洁
+        // 对象的多个属性控制统一交给代理完成
+        // 严格模式下 set 必须返回布尔值
+
+        "use strict";
+        const hd = {
+            name: "艾玛",
+            age: 15
+        };
+        const proxy = new Proxy(hd, {
+            //参数： 目标对象 和所要访问的属性
+            get(obj, property) {
+                // console.log(obj.property);
+                return obj[property];
+            },
+            set(obj, property, value) {
+                obj[property] = value;
+                return true;
+            }
+        });
+        proxy.age = 20;
+        // console.log(proxy.name);
+        console.log(hd);
+
+    </script>
+</body>
+
+</html>

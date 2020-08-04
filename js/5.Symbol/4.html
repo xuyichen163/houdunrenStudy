@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol 在缓存容器中的使用</title>
+</head>
+<body>
+    <script>
+        class cache{
+            static data = {};
+            static set(name, value){
+                return (this.data[name] = value);
+            }
+
+            static get(name){
+                return this.data[name];
+            }
+
+        }
+        // cache.set("BLACKPINK","YG entertainment");
+        // console.log(cache.get("BLACKPINK"));
+
+        let user = {
+            name : 'apple',
+            desc:'用户',
+            key : Symbol('会员资料')
+        };
+
+        let cart = {
+            name : 'apple',
+            desc:'购物车',
+            key : Symbol('购物车内容')
+        };
+
+        cache.set(user.key, user);
+        cache.set(cart.key, cart);
+        console.log(cache.get(user.key));
+
+    </script>
+</body>
+</html>

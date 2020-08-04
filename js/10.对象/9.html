@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构的默认值</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let [name, site = 'hdcms'] = ['后盾人'];
+    // console.log(site); //hdcms
+
+    // let { name, url, user = '向军大叔' } = { name: '后盾人', url: 'houdunren.com' };
+    // console.log(name, user);//向军大叔
+
+    function createElement(options) {
+        let {
+            width = '200px',
+            height = '100px',
+            backgroundColor = 'red'
+        } = options;
+
+        const div = document.createElement('div');
+        div.style.width = width ;
+        div.style.height = height ;
+        div.style.backgroundColor = backgroundColor ;
+        document.body.appendChild(div);
+        
+        console.log(width,height,backgroundColor);
+    }
+
+    createElement({backgroundColor: 'green'});
+</script>
+
+</html>

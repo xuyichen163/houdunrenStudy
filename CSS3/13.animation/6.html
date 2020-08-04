@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微场景页面布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* background: #2c3e50; */
+            display: grid;
+            grid-template-rows: 10vh 1fr 10vh;
+        }
+
+        header {
+            background: #e67e22;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            animation: translate .5s;
+        }
+
+        main {
+            background: url("img/33.jpg");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 80vw;
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+        }
+
+        div:nth-child(1) {
+            background: #2980b9;
+            transform: translateY(-50px);
+        }
+
+        div:nth-child(2) {
+            background: #27ae60;
+        }
+
+        footer {
+            background: #7f8c8d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            scale: 0;
+            color: white;
+            animation: rotate .5s 1s backwards;
+        }
+
+        @keyframes translate {
+            from {
+                transform: translateX(-100vw);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: scale(0) rotate(360deg);
+            }
+
+            to {
+                transform: scale(1) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Jane Tian</header>
+    <main>
+        <div>天上风筝在天上飞
+            地上人儿在地上追
+            你若担心你不能飞
+            你有我的蝴蝶
+            天上风筝在天上飞
+            地上人儿在地上追
+            你若担心你不能飞
+            你有我的蝴蝶
+            你形容我是这个世界上 无与伦比的美丽
+            我知道你才是这世界上
+            无与伦比的美丽
+            你知道当你需要个夏天
+            我会拼了命努力
+        </div>
+        <div>在海洋音乐祭的舞台后，张悬拍着青峰的肩膀，轻描淡写的说，“我的夏天过的很糟，希望你能够为我过一个很棒的夏天。”于是吴青峰动情地唱道：“你知道当你需要个夏天我会拼了命努力。</div>
+    </main>
+    <footer>天上风筝在天上飞</footer>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反序列化</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 使用 JSON.parse 将字符串 json 解析成对象
+    let hd = {
+        "title": "后盾人",
+        "url": "houdunren.com",
+        "teacher": {
+            "name": "向军大叔",
+        }
+    }
+    let jsonStr = JSON.stringify(hd);
+    // console.log(JSON.parse(jsonStr));
+    // 使用第二个参数函数来对返回的数据二次处理
+    console.log(
+        JSON.parse(jsonStr, (key, value) => {
+            if (key == "title") {
+                return `[推荐] ${value}`;
+            }
+            return value;
+        })
+    );
+</script>
+
+</html>

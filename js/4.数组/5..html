@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展开语法</title>
+</head>
+
+<body>
+    <script>
+        //数组合并
+        let ary = ['houdun', 'dududu'];
+        let hd = ['js', 'css'];
+        // for (const key of hd){
+        //     ary.push(key);
+        // }
+        // console.log(ary);
+        //for/of用来遍历 Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构。 取值
+        //for/in用于遍历对象的所有属性，for/in主要用于遍历对象，不建议用来遍历数组  取索引
+
+        //直接连接
+        ary = [...ary,...hd];//对象展开
+        console.log(ary);
+
+        //接收参数不定 可以使用展开语法
+        // function sum(...args) {
+        //     // console.log(args);
+        //     // let n = 0;
+        //     // for(const key of args){
+        //     //     n = n + key;
+        //     // };
+        //     // return n;
+
+        //     return args.reduce((s, v) => {
+        //         return (s += v);
+        //     }, 0);
+        // }
+        // console.log(sum(1, 2, 3, 4, 3, 4, 5, 2, 34, 5, 2, 3));
+
+
+
+
+    </script>
+</body>
+
+</html>

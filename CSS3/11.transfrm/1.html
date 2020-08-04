@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动感表单</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #aaa;
+        }
+
+        main {
+            height: 300px;
+            width: 300px;
+            box-sizing: border-box;
+            border: solid 5px #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        main div {
+            margin: 10px
+        }
+
+        .field {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .field::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(to right, white, #1abc9c, #f1c40f, white);
+            transform: translateX(-100%);
+            transition: 1s;
+        }
+
+        .field:hover::before {
+            transform: translateX(100%);
+        }
+
+        .field input {
+            border: none;
+            outline: none;
+            background: #ecf0f1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="field"><input type="text" placeholder="请输入账号"></div>
+        <div class="field"><input type="password" placeholder="请输入密码"></div>
+    </main>
+</body>
+
+</html>

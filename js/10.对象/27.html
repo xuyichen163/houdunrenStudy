@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问器伪造属性操作</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let lesson = {
+            lists: [
+                { name: "js", price: 100 },
+                { name: "mySql", price: 50 },
+                { name: "python", price: 90 },
+                { name: "php", price: 80 },
+            ],
+            get total() {
+                return this.lists.reduce((t, b) => t + b.price, 0);
+            }
+        };
+        console.log(lesson.total);
+    </script>
+</body>
+
+</html>

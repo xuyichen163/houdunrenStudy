@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数给this带来的变化</title>
+</head>
+
+<body>
+    <button id="btn">button</button>
+</body>
+<script>
+    // var name = 'hdcms';
+    // var obj = {
+    //     name: '后盾人',
+    //     getName: function () {
+    //         var self = this;
+    //         return () => {
+    //             return this.name;
+    //         }
+    //     }
+    // }
+    // console.log(obj.getName()());//后盾人 
+
+    let Dom = {
+        site: "后盾人",
+        bind: function () {
+
+            const button = document.getElementById('btn');
+
+            // const that = this;
+            // console.log(button);
+            // button.addEventListener("click", function () {
+            //     console.log(this.innerHTML);  //button
+            //     console.log(that.site);  //后盾人
+            //     this.innerHTML = that.site +"-"+ this.innerHTML;
+            // })
+
+
+            button.addEventListener("click", event => {
+                console.log(this);  //Dom
+                console.log(event.target);  //button
+                event.target.innerHTML = this.site + "-" + event.target.innerHTML;
+            })
+        }
+    }
+
+    Dom.bind();
+</script>
+
+</html>

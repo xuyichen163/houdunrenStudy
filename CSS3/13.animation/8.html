@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹跳的小球</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template: 1fr/repeat(5, 1fr);
+            background: #34495e;
+        }
+
+        div {
+            grid-column: 3/4;
+            height: 50px;
+            width: 50px;
+            background: #e67e22;
+            border-radius: 50%;
+            justify-self: center;
+            animation: jump 2s infinite ease-in forwards;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+                animation-timing-function: ease-in;
+            }
+
+            30% {
+                transform: translateY(10vh);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: translateY(40vh);
+                animation-timing-function: ease-in;
+            }
+
+            80% {
+                transform: translateY(60vh);
+                animation-timing-function: ease-in;
+            }
+
+            95% {
+                transform: translateY(75vh);
+                animation-timing-function: ease-in;
+            }
+
+            15%,
+            45%,
+            70%,
+            85%,
+            100% {
+                transform: translateY(80vh);
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

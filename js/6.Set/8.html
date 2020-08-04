@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引用类型的垃圾回收原理</title>
+</head>
+<body>
+    <script>
+        // 对象地址被引用 一次
+        let hd = { name : "dududu"};
+        // 地址赋给edu 对象地址引用了两次
+        let edu = hd;
+
+        // WeaSet保存的对象不会增加引用计数器，如果一个对象不被引用了会自动删除。 弱引用
+        let set = new WeakSet();
+        set.add(hd);
+        // 此时 对象地址的引用次数为2次
+
+        // hd不再指向对象
+        hd = null;
+        // edu不再指向对象  -- 对象成为了垃圾
+        edu = null;
+
+        // 此时的引用地址次数为0 当垃圾回收时对象被删除，这时WakeSet也就没有记录了
+        // 此时的weakset不知道此时已经没有引用了
+        console.log(set);
+    </script>
+</body>
+</html>

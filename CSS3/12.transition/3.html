@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>步进时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            background: #fff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        /* 圆点 */
+        main::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+
+        }
+
+        /* 指针 */
+        main::after {
+            content: "";
+            width: 2px;
+            height: 50%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-origin: bottom;
+            transform: translateX(-50%);
+            background: #000;
+            transition: 60s;
+            transition-timing-function: steps(60, start);
+        }
+
+        main:hover::after {
+            transform:  translateX(-50%) rotate(360deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <main></main>
+</body>
+
+</html>

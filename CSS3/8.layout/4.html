@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>购物车</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            padding-left: 200px;
+            padding-top: 200px;
+        }
+        article {
+            width: 150px;
+            position: relative;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        article div {
+            border: solid 1px #ccc;
+            text-align: center;
+            line-height: 3.5em;
+            color: #555;
+        }
+        article:hover div:nth-of-type(1){
+            border-bottom: none;  /* 鼠标放上去的时候 下边界消失 */
+            border-color: red;
+        }
+        article:hover div:nth-of-type(2){
+            display: block;/* 下面的图案显示 */
+            border-color: red;
+        }
+        article div:nth-of-type(1) {
+            height: 50px;
+            background: #fff;
+            /* border-bottom: none; */
+            position: relative;
+            z-index: 2;
+        }
+        article div:nth-of-type(2) {
+            height: 80px;
+            width: 300px;
+            position: absolute;
+            right: 0; /* 右边对齐 */
+            top: 50px;/* 与上边的高度相同 可适当调整 */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>我的购物车</div>
+        <div>我的购物车商品</div>
+    </article>
+</body>
+
+</html>

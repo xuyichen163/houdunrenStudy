@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跳动的心脏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            width: 200px;
+            height: 200px;
+            background: #c0392b;
+            position: relative;
+            transform: rotate(45deg) scale(0.5);
+            animation:move infinite 1s;
+        }
+
+        .heart::before {
+            content: "";
+            width: 200px;
+            height: 200px;
+            background: #c0392b;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: -100px;
+        }
+
+        .heart::after {
+            content: "";
+            width: 200px;
+            height: 200px;
+            background: #c0392b;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: -100px;
+        }
+
+        @keyframes move {
+            from{
+                transform: scale(0.3) rotate(45deg);
+            }
+            to{
+                transform: scale(1) rotate(45deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="heart"></div>
+
+</body>
+
+</html>

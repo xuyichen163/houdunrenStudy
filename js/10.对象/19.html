@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据也可以使用构造函数构建</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const num = new Number(99);
+    console.log(num.valueOf()); //99
+
+    const string = new String("abdsfhdshiu");
+    console.log(string.valueOf()); //abdsfhdshiu
+    console.log(string.toUpperCase());//ABDSFHDSHIU
+
+    const boolean = new Boolean(true);
+    console.log(boolean.valueOf()); //true
+
+
+    const date = new Date();
+    console.log(date.valueOf() * 1); //1594716206642
+
+    const regexp = new RegExp("\\d+");
+    console.log(regexp.test(99));  //true
+
+    let hd = new Object();
+    hd.name = "后盾人";
+    console.log(hd);
+
+    let User = new Function('name',`
+    this.name = name;
+    this.show = function(){
+        console.log(this.name+'是通过构造函数Function构建的')
+        }`);
+    let Aima = new User('艾玛');
+    Aima.show();
+    
+</script>
+
+</html>

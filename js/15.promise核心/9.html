@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise单一状态和状态中转</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 下例中p2 返回了p1 所以此时p2的状态已经无意义了，后面的then是对p1状态的处理
+    const p1 = new Promise((resolve, reject) => {
+        // resolve("fulfilled");
+        reject("rejected");
+    });
+    new Promise((resolve, reject) => {
+        // resolve("fullfilled");
+        resolve(p1);
+    }).then(
+        msg => {
+            console.log(msg);
+        },
+        error => {
+            console.log(error+" 13");
+        }
+    )
+</script>
+
+</html>

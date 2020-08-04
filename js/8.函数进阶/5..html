@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>形参和实参</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 形参是在函数声明时设置的参数，实参指在调用函数时传递的值。
+    // 形参数量大于实参时，没有传参的形参值为 undefined
+    // 实参数量大于形参时，多于的实参将忽略并不会报错
+
+
+    // n1,n2 为形参
+    function sum(n1, n2) {
+        return n1 + n2;
+    }
+    // 参数 2,3 为实参
+    console.log(sum(2, 3)); //5
+
+    
+    // 当没传递参数时值为undefined
+    function sum(n1, n2) {
+        return n1 + n2;
+    }
+    console.log(sum(2)); //NaN
+</script>
+
+</html>

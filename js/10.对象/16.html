@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 深拷贝的函数实现
+    let obj = {
+        name: '后盾人',
+        user: {
+            name: 'hdcms'
+        },
+        data: []
+    }
+    function copy(object) {
+        let res = object instanceof Array ? [] : {}
+        for (const [k, v] of Object.entries(object)) {
+            res[k] = typeof v == "object" ? copy(v) : v;
+        }
+        return res;
+    }
+    let hd = copy(obj);
+    hd.user.name = 'hd';
+    hd.data.push('abc');
+    console.log(JSON.stringify(hd, null, 2));
+    console.log(JSON.stringify(obj, null, 2));
+
+
+</script>
+
+</html>

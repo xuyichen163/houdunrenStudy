@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问器保护数据</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        const user1 = {
+            name: "aima",
+            age: 15
+        };
+        // 外界可以对属性直接修改
+        user1.age = 18;
+        // console.log(
+        //     JSON.stringify(Object.getOwnPropertyDescriptors(user1), null, 2)
+        // );
+
+        const user2 = {
+            data: {
+                name: "aima",
+                age: 15
+            },
+            set age(age) {
+                console.log("run...");
+                if (typeof age !== 'number' || age < 10 || age >100) {
+                    throw new Error('年龄格式错误');
+                }
+                this.data.age = age;
+            },
+            get age() {
+                console.log("get...");
+                return `年龄是${this.data.age}岁`;
+            }
+        };
+        user2.age = 22;
+        // console.log(
+        //     JSON.stringify(Object.getOwnPropertyDescriptors(user2), null, 2)
+        // );
+        console.log(user2.age);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map的增删查</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name :"度有毒"
+        };
+        let map = new Map();
+        // 增加数据
+        map.set(obj,"seu.edu.cn");
+
+        // 删
+        map.delete(obj);
+        // map.clear();全删
+
+        // // 查
+        console.log(map.has(obj));
+
+        // // 获取键对应的值
+        // console.log(map.get(obj));
+
+        console.log(map);
+    </script>
+</body>
+
+</html>

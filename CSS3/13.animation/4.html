@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet">
+    <title>animation-direction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            width: 800px;
+            height: 200px;
+            display: flex;
+
+        }
+
+        li {
+            color: #c0392b;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        li span {
+            position: absolute;
+            bottom: 0;
+            color: wheat;
+        }
+
+        i.fa {
+            font-size: 3em;
+            position: absolute;
+        }
+
+        li:nth-child(1) i.fa {
+            animation: move 2s infinite normal;
+        }
+
+        li:nth-child(2) i.fa {
+            animation: move 2s infinite reverse;
+        }
+
+        li:nth-child(3) i.fa {
+            animation: move 2s infinite alternate;
+        }
+
+        li:nth-child(4) i.fa {
+            animation: move 2s infinite alternate-reverse;
+        }
+
+        @keyframes move {
+            to {
+                transform: scale(3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>normal</span>
+        </li>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>reverse</span>
+        </li>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>alternate</span>
+        </li>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>alternate-reverse</span>
+        </li>
+    </ul>
+</body>
+
+</html>

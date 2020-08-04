@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跳动的小球</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(at center, #f39c12, #c0392b);
+            border-radius: 50%;
+            animation: move 1s infinite alternate-reverse;
+        }
+
+        section {
+            width: 200px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            transform: translateY(50px);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(3px);
+            animation: shadow 1s infinite alternate-reverse;
+        }
+
+        @keyframes shadow {
+            to {
+                width: 200px;
+                height: 10px;
+                background: rgba(0, 0, 0, 0.3);
+                filter: blur(30px);
+            }
+        }
+
+        @keyframes move {
+            to {
+                transform: translate(0, -300px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <section></section>
+</body>
+
+</html>

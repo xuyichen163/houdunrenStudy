@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漂亮的随机色效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            color: aliceblue;
+            font-size: 3em;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    seu.edu.cn
+</body>
+<script>
+    function Color(elem) {
+        this.elem = elem;
+        this.color =["#9b59b6","#e74c3c","#f1c40f","#27ae60"];
+        this.run = function(){
+            setInterval(function(){
+                let i = Math.floor(Math.random()*this.color.length);
+                this.elem.style.backgroundColor = this.color[i];
+            }.bind(this),1000);
+        };
+    };
+    let obj = new Color(document.body);
+    obj.run();
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义find函数原理方法实现</title>
+</head>
+<body>
+    <script>
+        function find(array,callback){
+            for(const value of array){
+                if(callback(value))    return value;
+            }
+            return undefined;
+        }
+
+        let arr=[1,2,3,4,5,6];
+        console.log(find(arr,function(item){
+            return item == 22;
+        }))
+    </script>
+</body>
+</html>

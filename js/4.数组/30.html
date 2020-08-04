@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷的文字logo效果</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3498db;
+        }
+
+        div {
+            font-size: 5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #34495e;
+        }
+
+        div>span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .color {
+            animation: color 1s 1 linear alternate;
+        }
+
+        @keyframes color {
+            50% {
+                color: #f1c40f;
+                transform: scale(2);
+            }
+
+            to {
+                color: #e67e22;
+                transform: scale(.8);
+            }
+        }
+    </style>
+    <div>katherine&&Jane</div>
+    <script>
+        const div = document.querySelector("div");
+        // console.log(div);
+        // console.log([...div.textContent]);
+        [...div.textContent].reduce(function (pre, cur, index) {
+            //如果pre等于index 则清空 div
+            pre == index && (div.innerHTML = "");
+            // console.log(pre,cur,index);
+
+            let span = document.createElement("span");
+            span.innerHTML = cur;
+            div.appendChild(span);
+            //鼠标移动 mouseover 增加类color
+            span.addEventListener("mouseover", function () {
+                this.classList.add("color");
+            });
+
+            //动画结束 删除color类
+            span.addEventListener("animationend", function () {
+                this.classList.remove("color");
+            })
+        }, 0);
+
+    </script>
+</body>
+
+</html>

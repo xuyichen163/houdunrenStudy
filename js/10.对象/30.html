@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问器的优先级</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        //  访问器的优先级高于普通的赋值方式
+        // const user = {
+        //     data: {
+        //         name: "文征明",
+        //         age: 45,
+        //     },
+        //     set name(name) {
+        //         this.data.name = name;
+        //     },
+        //     get name(){
+        //         return this.data.name;
+        //     }
+        // };
+        // user.name = "吴黎";
+        // console.log(user.name);
+        const DATA = Symbol();
+        const user = {
+            [DATA]: {
+                name: "文征明",
+                age: 45,
+            },
+            set name(name) {
+                this[DATA].name = name;
+            },
+            get name() {
+                return this[DATA].name;
+            }
+        };
+        user.name = "吴黎";
+        console.log(user.name);
+
+
+    </script>
+</body>
+
+</html>

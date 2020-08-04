@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包获取区间商品</title>
+
+    <style>
+        button {
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button message="中国石油大学（华东）">中国石油大学（华东）</button>
+    <br>
+    <button message="东南大学 ">东南大学</button>
+    <script>
+
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(function (value, index) {
+            buttons[index].addEventListener('click', function () {
+                console.log(` 点击了第 ${index + 1} 个按钮 `);
+            });
+        })
+        // let arr = [2, 9, 4, 1, 10, 6, 2, 33, 12, 24, 23, 54];
+        // let hd = arr.filter(function (v) {
+        //     return v >= 1 && v <= 10;
+        // });
+        // console.table(hd);
+
+        // let a = arr.filter(function (v) {
+        //     return v >= 3 && v <= 20;
+        // });
+        // console.table(a);
+
+        // 设置一个复用函数
+        // function betweenFilter(a, b) {
+        //     return arr.filter(function (v) {
+        //         return v >= a && v <= b;
+        //     })
+        // }
+        // let result = betweenFilter(2, 20);
+        // console.log(result);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>表单的应用</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "mostserrat", sans-serif;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="1.php">
+        <!-- 后台处理脚本 -->
+        <fieldset>
+            <legend>dududu</legend>
+            <label for="title">题目：
+                <input type="number" id="title" name="title" maxlength="5"><!-- 表单内的内容 -->
+            </label>
+
+            <hr>
+            <label for="content">内容：
+                <input type="text" id="content" name="content" value="你好啊">
+            </label>
+
+        </fieldset>
+        <!-- <button>提交</button> -->
+        <input type="submit" value="保存提交">
+        <br>
+        <textarea name="info" id="" cols="30" rows="10"></textarea>
+
+        <select name="category[]" multiple size="6">
+            <optgroup label="新闻">
+                <option value="1">新闻</option>
+                <option value="2" selected>游戏</option>
+            </optgroup>
+            <optgroup label="开发">
+                <option value="1">java</option>
+                <option value="2" selected>python</option>
+            </optgroup>
+        </select>
+        <br>
+        <input type="radio" name="sex" id="boy" value="boy" checked>
+        <label for="boy">男孩</label>
+        <input type="radio" name="sex" id="girl" value="girl">
+        <label for="girl">女孩</label>
+        <br>
+        <input type="checkbox" name="register[]" id="tel" value="tel" checked>
+        <label for="tel">手机注册</label>
+        <input type="radio" name="register[]" id="email" value="email">
+        <label for="email">邮箱注册</label>
+    </form>
+    <br>
+    <form action="1.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <input type="file" name="image[]" accept=".jpep,.png" multiple>
+        </fieldset>
+    </form>
+
+    <form action="2.php" method="POST">
+        <fieldset>
+            <input type="datetime-local" min="2020-10-02" max="2023-03-04">
+            <button>提交</button>
+        </fieldset>
+    </form>
+
+    <form action="2.php" method="POST">
+        <fieldset>
+            <input type="search" name="dududu" list="lesson" />
+            <datalist id="lesson">
+                <option value="MYSQl">数据库管理</option>
+                <option value="php">后台语言</option>
+                <option value="css">网页美化样式</option>
+            </datalist>
+        </fieldset>
+    </form>
+
+
+    <form action="" method="POST">
+        <fieldset>
+            <input type="text" name="dududu" autocomplete="off">
+            <button>提交</button>
+        </fieldset>
+    </form>
+
+    <ol start="1">
+        <li>php</li>
+        <li>css</li>
+        <li>html</li>
+    </ol>
+    <hr>
+    <ul >
+        <li>php</li>
+        <li>css</li>
+        <li>html</li>
+    </ul>
+    <hr>
+    <dl >
+        <dt>语言</dt>
+        <dd>php</dd>
+        <dd>css</dd>
+        <dd>html</dd>
+        <dt>场所</dt>
+        <dd>上海</dd>
+        <dd>北京</dd>
+        <dd>南京</dd>
+    </dl>
+</body>
+
+</html>

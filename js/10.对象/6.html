@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式中的解构差异</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 非严格模式可以不使用声明指令，严格模式下必须使用声明。
+    // 所以建议使用 let 等声明。
+    // "use strict"
+    // ({ name, age } = { name: "秦唐", age: 20 });
+    // console.log(name,age);
+
+    "use strict"
+    let { name, age } = { name: "秦唐", age: 20 };
+    console.log(name,age);
+</script>
+
+</html>

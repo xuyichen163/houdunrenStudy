@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+        // 循环4次 未设置返回值
+        // arr.reduce(function (pre, value, index, array) {
+        //     console.log(pre, value);
+        // });
+        // console.log("*".repeat(10));
+        // 循环4次 设置返回值
+
+        // arr.reduce(function (pre, value, index, array) {
+        //     console.log(pre, value);
+        //     return 99;
+        // });
+        // console.log("*".repeat(10));
+        // 循环5次 设置初始值0 和返回值
+
+        // arr.reduce(function (pre, value, index, array) {
+        //     console.log(pre, value);
+        //     return 99;
+        // }, 0);
+
+        // let ar = [1,2,3,4,1,2,3,2,3,1,2];
+        // 函数中某个数出现次数
+        // function arrayCount(array,item){
+        //     // let count = 0;
+        //     // array.map(function(value){
+        //     //     if(value == item) count++;
+        //     // })
+        //     // return count;
+
+        //     return array.reduce(function(total,cur){
+        //         if(cur == item) total++;
+        //         // total += item == cur ? 1 : 0;
+        //         return total;
+        //     },0);
+        // }
+        // console.log(arrayCount(ar,1));
+
+        // 返回最大值
+        let ar = [1,2,3,4,1,2,3,2,3,1,2];
+        function arrMAx(array){
+            return array.reduce(function(pre,cur){
+                return pre>cur? pre: cur;
+            });
+        };
+        console.log(arrMAx(ar));
+    </script>
+</body>
+
+</html>

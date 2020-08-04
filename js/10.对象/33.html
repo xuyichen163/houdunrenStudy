@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用代理控制函数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+    // 阶乘
+    function factorial(num) {
+        return num = 1 ? 1 : num * factorial(num - 1);
+    }
+    let proxy = new Proxy(factorial, {
+        //调用的函数，对象，参数
+        apply(func, obj, args) {
+            // console.log(func);
+            // console.log(args);
+            // console.log(obj);
+
+            // 下面使用 apply 计算函数执行时间
+            console.time("run");
+            func.apply(this, args);
+            console.timeEnd("run");
+        }
+    });
+    // proxy(5);
+    proxy.apply(this, [5]);
+
+</script>
+
+</html>

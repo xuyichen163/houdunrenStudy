@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>缩放菜单的例子</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        main ul {
+            display: flex;
+            list-style: none;
+
+        }
+
+        main ul li {
+            margin-right: 10px;
+        }
+
+        main ul li:hover strong+div {
+            transform: scale(1);
+        }
+
+        main ul li strong {
+            padding: 5px 30px;
+            background: #2980b9;
+            text-transform: uppercase;
+            color: white;
+            cursor: pointer;
+        }
+
+        main ul li strong+div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #bdc3c7;
+            padding: 10px;
+            transition: 1s;
+            transform: scale(0, 0);
+            z-index: -1;
+            transform-origin: top left;
+        }
+
+        main ul li strong+div a {
+            text-decoration: none;
+            padding: 5px 0;
+            color: white;
+            cursor: pointer;
+            border-bottom: solid 1px #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li>
+                <strong>video</strong>
+                <div>
+                    <a href="">php</a>
+                    <a href="">mysql</a>
+                </div>
+            </li>
+            <li>
+                <strong>live</strong>
+                <div>
+                    <a href="">html</a>
+                    <a href="">css</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数编程和面向对象的实力对比</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 对象是包括属性与方法的数据类型，
+    // JS中大部分类型都是对象如String/Number/Math/RegExp/Date
+    // 函数编程
+    let name = "艾玛";
+    let grade = [
+        { lessons: "js", score: 99 },
+        { lessons: "css", score: 90 },
+    ];
+    function average(grade, name) {
+        const total = grade.reduce((t, l) => t + l.score, 0);
+        return `${name}的平均成绩是 :  ${total / grade.length}`;
+    }
+    console.log(average(grade, name));
+
+    // 面向对象的操作
+    // 使用对象编程的代码结构清晰，也减少了函数的参数传递，也不用担心函数名的覆盖
+    let user = {
+        name: '艾玛',
+        grade: [
+            { lessons: "js", score: 99 },
+            { lessons: "css", score: 90 },
+        ],
+
+        average: function (grade, name) {
+            const total = grade.reduce((t, l) => t + l.score, 0);
+            return `${name}的平均成绩是 :  ${total / grade.length}`;
+        }
+    }
+    console.log(user);
+</script>
+
+</html>

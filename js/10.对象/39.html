@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON数据解决什么问题</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // json 是一种轻量级的数据交换格式，易于人阅读和编写。
+    // 使用json 数据格式是替换 xml 的最佳方式，主流语言都很好的支持json 格式。所以 json 也是前后台传输数据的主要格式。
+    // json 标准中要求使用双引号包裹属性，虽然有些语言不强制，但使用双引号可避免多程序间传输发生错误语言错误的发生。
+    let xj = {
+        name :"艾玛",
+        data :{
+            "title":"php",
+            "url" : "houdunre.com",
+            "teacher" : "向军",
+        }
+    }
+    console.log(xj.data.teacher);
+</script>
+
+</html>

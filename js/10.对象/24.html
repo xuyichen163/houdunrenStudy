@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封闭对象的API</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        const user = {
+            name: "司马",
+            age: 16
+        };
+        // 封闭对象 将对象封闭起来
+        // Object.seal()方法封闭一个对象，阻止添加新属性并将所有现有属性标记为 configurable: false
+        //不允许删除 不允许修改访问属性
+        Object.seal(user);
+        if (!Object.isSealed(user)) {
+            user.site = "diedie";
+        }
+        user.name = "diedie";
+        console.log(
+            JSON.stringify(Object.getOwnPropertyDescriptors(user),null,2)
+        );
+    </script>
+</body>
+
+</html>

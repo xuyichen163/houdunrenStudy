@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>透视效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        main {
+            display: flex;
+            /* perspective:600px; */
+            border: 3px solid #fff;
+            transform: perspective(900px) rotateY(45deg); 
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: #f1c40f;
+            margin-right: 100px;
+            transform:rotateY(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+    </main>
+</body>
+
+</html>

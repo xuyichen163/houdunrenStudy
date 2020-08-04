@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d长方体效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+
+        }
+
+        main {
+            display: flex;
+            /* border: solid 5px #fff; */
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform-origin: center center 100px;
+            transform: perspective(900px) rotateX(-45deg);
+            transition: 2s;
+        }
+
+        body:hover main {
+            transform: perspective(900px) rotateX(-185deg) rotateY(360deg);
+        }
+
+        div {
+            position: absolute;
+            /* background: #3498db; */
+            font-size: 4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center 100px;
+            opacity: 0.5;
+        }
+
+        div:nth-child(1) {
+            height: 200px;
+            width: 400px;
+            background: #2980b9;
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+
+        div:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: #2ecc71;
+            transform: rotateY(180deg) translateZ(-100px);
+        }
+
+        div:nth-child(3) {
+            height: 200px;
+            width: 400px;
+            background: #f39c12;
+            transform: rotateY(270deg) translateZ(100px);
+        }
+
+        div:nth-child(4) {
+            width: 200px;
+            height: 200px;
+            background: #8e44ad;
+            transform: rotateY(0deg) translateZ(-100px);
+        }
+
+        div:nth-child(5) {
+            height: 400px;
+            width: 200px;
+            background: #ecf0f1;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        div:nth-child(6) {
+            height: 400px;
+            width: 200px;
+            background: #95a5a6;
+            transform: rotateX(-90deg) translateZ(-100px);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </main>
+</body>
+
+</html>

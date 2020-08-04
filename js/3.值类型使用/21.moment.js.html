@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment.js库的使用</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.js"></script>
+    <script>
+        // 获得当前时间
+        console.log(moment().format("YYYY-MM-DD HH:mm:ss"));
+        // 获得对应的时间
+        const date=moment("1995-03-03 10:12:15");
+        console.log(date.format("YYYY-MM-DD HH:mm:ss"));
+
+        //十天之后的日期
+        // const date=moment("1995-03-03 10:12:15");
+        console.log("10天之后的时间是：");
+        console.log(date.add(10,"days").format("YYYY-MM-DD HH:mm:ss"));
+    </script>
+</body>
+</html>

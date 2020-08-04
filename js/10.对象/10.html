@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数的解构特性使用技巧</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function hd([a, b]) {
+    //     console.log(a, b);
+    // }
+    // hd(['后盾人', 'hdcms']);
+
+    // 对象参数使用方法
+    // function hd({ name, url, user = '向军大叔' }) {
+    //     console.log(name, url, user);
+    // }
+    // hd({ name: '后盾人', 'url': 'houdunren.com' }); //后盾人 houdunren.com 向军大叔
+
+    // 对象解构传参
+    function user(name, { sex, age } = {}) {
+        console.log(name, sex, age); //向军大叔 男 18
+    }
+    user("向军大叔", { sex: "男", age: 18 });
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象与原型链属性的检测实例</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // hasOwnProperty检测对象自身是否包含指定的属性，
+    // 不检测原型链上继承的属性
+    // let arr = ["后盾人"];
+    // console.log(arr);
+    // console.log(arr.hasOwnProperty("length")); //true
+    // console.log(arr.hasOwnProperty("concat")); //false
+
+    // // 使用 in 可以在原型对象上检测
+    // console.log("concat" in arr); //true
+
+
+    let obj = { name: "后盾人" };
+    let hd = {
+        web: "houdunren.com"
+    };
+
+    //设置hd为obj的新原型
+    Object.setPrototypeOf(obj, hd);
+    console.log(obj);
+
+    console.log("web" in obj); //true
+    console.log(obj.hasOwnProperty("web")); //false
+</script>
+
+</html>

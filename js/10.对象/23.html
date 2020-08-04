@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不许向对象添加属性</title>
+</head>
+
+<body>
+    <script>
+        // Object.preventExtensions 禁止向对象添加属性 configue 仍然为true
+        "use strict";
+        const user = {
+            name: "艾玛",
+            age: 18
+        };
+        Object.preventExtensions(user);
+        if (Object.isExtensible(user)) {
+            user.site = "一二一";
+            console.log(user);
+        }
+        console.log(
+            JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+        );
+
+    </script>
+</body>
+
+</html>

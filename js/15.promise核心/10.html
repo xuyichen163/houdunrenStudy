@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>then方法</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    new Promise((resolve, reject) => {
+        resolve("一杯可乐");
+    }).then(
+        value => {
+            console.log(value);
+        },
+        reason => {
+            console.log(reason);
+        },
+    );
+</script>
+
+</html>

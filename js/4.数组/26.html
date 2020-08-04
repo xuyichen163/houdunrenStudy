@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map函映射数组</title>
+</head>
+
+<body>
+    <script>
+        let lessons = [
+            { title: '媒体查询响应式布局', catogory: "css" },
+            { title: 'Flex 弹性盒模型', catogory: "css" },
+            { title: 'MYSQL 多表查询随意操作', catogory: "mysql" },
+        ];
+        // let arr = ["dududu","dididi","nanana"];
+        // let newArray = arr.map(function(value,index,array){
+        //     //返回什么 新数组就是什么
+        //     return `辰砚肆: ${value}`;
+        //     // console.log(index);
+        // });
+
+        // 修改原数组 直接用lessons
+        lessons.map(function (value) {
+            value.click = 100;
+        })
+
+        
+
+        console.table(lessons);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯css轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        /* 外面的框 */
+        main {
+            width: 500px;
+            height: 300px;
+            align-self: center;
+            justify-self: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 包四张图的div */
+        section {
+            width: 2000px;
+            height: 250px;
+            display: grid;
+            grid-template: 1fr/repeat(4, 500px);
+            animation: move 4s steps(4, end) infinite;
+        }
+
+        main:hover section{
+            animation-play-state: paused;
+        }
+
+
+        div {
+            overflow: hidden;
+        }
+
+        div img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        ul {
+            position: absolute;
+            box-sizing: border-box;
+            width: 180px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            list-style: none;
+            justify-content: space-evenly;
+        }
+
+        ul::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #c0392b;
+            position: absolute;
+            left: 4px;
+            top: 0;
+            z-index: -1;
+            animation: dong 4s steps(4, end) infinite;
+        }
+
+        main:hover ul::after{
+            animation-play-state: paused;
+        }
+
+        @keyframes dong {
+            to {
+                transform: translateX(175px);
+            }
+        }
+
+        li {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        @keyframes move {
+            to {
+                transform: translateX(-2000px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div><img src="img/1.jpg" alt=""></div>
+            <div><img src="img/2.jpg" alt=""></div>
+            <div><img src="img/3.jpg" alt=""></div>
+            <div><img src="img/4.jpg" alt=""></div>
+        </section>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </main>
+</body>
+
+</html>

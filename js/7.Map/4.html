@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map类型转换</title>
+</head>
+<body>
+    <script>
+        let hd = new Map([["name","123"],["sex","man"]]);
+        console.log(hd);
+
+        //可以使用展开语法或Array.form 静态方法将Set类型转为数组,这样就可以使用数组处理函数了
+
+        // console.log(...hd);
+        // console.log(...hd.keys());
+        // console.log(...hd.values());
+        // console.log(...hd.entries());
+
+        let newArr = [...hd].filter(function(item){
+            return item[0].includes("sex");
+        })
+
+        hd = new Map(newArr);
+        console.log(...hd.keys());
+    </script>
+</body>
+</html>

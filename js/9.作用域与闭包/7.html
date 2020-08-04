@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟出var的伪块作用域效果</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 1; i <= 3; i++) {
+            // var 有函数作用域
+            // 参数传递 值传递
+            (function (a) {
+                setTimeout(function () {
+                    console.log(a);
+                }, 10);
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

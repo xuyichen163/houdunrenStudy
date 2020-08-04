@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证组件的代理工厂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px;
+            background: #34495e;
+        }
+
+        input {
+            border: solid 10px #ddd;
+            height: 30px;
+        }
+        .error{
+            border: solid 10px red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" validate rule="max:13,min:3">
+    <input type="text" validate rule="max:13,idNumber">
+</body>
+<script>
+    "use strict";
+    // 提供功能和验证
+    class Validate {
+        max(value, len) {
+            return value.length <= len;
+        }
+        min(value, len) {
+            return value.length >= len;
+        }
+        IsNumber(value) {
+            return /^\d+$/.test(value);
+        }
+    }
+    let validate = new Validate();
+
+    // console.log(validate.max("12345",6));
+    // 代理工厂 批量产生代理的函数
+    function makeProxy(target) {
+        return new Proxy(target, {
+            get(target, key) {
+                return target[key];
+            },
+            set(target, key, el) {
+                const rule = el.getAttribute("rule");
+                console.log(rule);
+                const validate = new Validate();
+                // 拆分规则 判断是否满足规则
+                let state = rule.split(",").every(rule => {
+                    const info = rule.split(":");
+                    return validate[info[0]](el.value, info[1]);
+                });
+                // 满足规则 
+                el.classList[state ? "remove" : "add"]("error");
+                return true;
+            }
+        });
+    }
+    const nodes = makeProxy(document.querySelectorAll("[validate]"));
+    // console.log(nodes);
+    nodes.forEach((item, i) => {
+        item.addEventListener("keyup", function () {
+            nodes[i] = this;
+        });
+    });
+</script>
+
+</html>

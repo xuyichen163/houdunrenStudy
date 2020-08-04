@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let const 在for循环中的执行原理</title>
+</head>
+
+<body>
+    <!-- let const 在for循环中的执行原理 -->
+
+    <script>
+        // var 没有块作用域 
+        for (var i = 1; i <= 3; i++) {
+            setTimeout(function () {
+                console.log(i);
+            }, 10);
+
+        }
+        console.log(i); //4
+        console.log("*".repeat(10));
+
+        // let 有块作用域 
+        for (let j = 1; j <= 3; j++) {
+            setTimeout(function () {
+                console.log(j);
+            }, 10);
+        }
+       // console.log(j); //undefined
+    </script>
+</body>
+
+</html>

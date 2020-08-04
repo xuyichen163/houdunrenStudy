@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        main {
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+            border: solid 2px #f39c12;
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: "";
+            width: 0;
+            height: 100%;
+            position: absolute;
+            transform: skew(45deg);
+            background: #f1c40f;
+            z-index: -1;
+            transition: 0.2s;
+        }
+
+        .btn:hover::after {
+            width:150%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <a href="" class="btn">katherine</a>
+    </main>
+</body>
+
+</html>

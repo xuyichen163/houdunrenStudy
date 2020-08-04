@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>边界的效果</title>
+    <link rel="stylesheet" href="1.css" type="text/css">
+    <style>
+        table caption {
+            background: red;
+            color: wheat;
+            caption-side:top;
+        }
+        table{
+            border: none;
+            border-collapse: collapse;/* 边框合并为极细线 */
+        }
+        table td{
+            border:none;
+            border-right: solid 1px #ddd;
+            border-top: solid 1px #ddd;
+        }
+        table td:last-child{
+            border-right:none;
+        }
+        table tr:last-child td{
+            border-bottom: solid 1px #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="table">
+        <nav>yuanyi</nav>
+        <section>
+            <ul>
+                <li>编号</li>
+                <li>标题</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>1</li>
+                <li>园艺</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>2</li>
+                <li>不愿意</li>
+            </ul>
+        </section>
+    </article>
+
+
+    <table border="1">
+        <thead>
+            <caption>干杯</caption>
+            <tr>
+                <td>编号</td>
+                <td>标题</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>会不会有一天，时间真的能倒退</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>退回你的我的，回不去的悠悠的岁月</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>也许会有一天，时间真的有终点</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用symbol解决字符串耦合问题</title>
+</head>
+
+<body>
+    <script>
+        //当key 一致 后面会覆盖前面
+
+        // let grade = {
+        //     'lisa': { js: 100, css: 89 },
+        //     'lisa': { js: 10, css: 49 },
+        // };
+        // console.log(grade);
+        
+        //正确操作
+        let user1 = {
+            name: 'lisa',
+            key: Symbol()
+        };
+
+        let user2 = {
+            name: 'lisa',
+            key: Symbol()
+        };
+        //用user.key就不会覆盖
+        let grade = {
+            [user1.key]: { js: 100, css: 89 },
+            [user2.key]: { js: 10, css: 49 },
+        };
+        //获得第一个lisa的成绩
+        console.log(grade[user1.key]);
+
+    </script>
+</body>
+
+</html>

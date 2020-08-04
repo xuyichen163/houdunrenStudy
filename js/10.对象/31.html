@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数与class语法糖中访问器</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        // 构造函数
+        // function User(name, age) {
+        //     // this.name  = name;
+        //     // this.age = age;
+        //     let data = { name, age };
+        //     Object.defineProperties(this, {
+        //         name: {
+        //             get() {
+        //                 return data.name;
+        //             },
+        //             set(value) {
+        //                 if (value.trim() == "" || value.length > 20) {
+        //                     throw new Error("无效命名");
+        //                 }
+        //                 data.name = value;
+        //             }
+        //         },
+        //         age: {
+        //             get() {
+        //                 return data.age;
+        //             },
+        //             set(value) {
+        //                 if (value.trim() == "") {
+        //                     throw new Error("无效命名");
+        //                 }
+        //                 data.age = value;
+        //             }
+
+        //         }
+        //     })
+        // }
+        // let xj = new User("向军", 25);
+        // xj.name = "汤显祖"
+        // console.log(xj.name);
+
+
+        // class语法
+        const DATA = Symbol();
+        class User {
+            constructor(name, age) {
+                this[DATA] = { name, age };
+            };
+            get name() {
+                return this[DATA].name;
+            };
+            set name(value) {
+                if (value.trim() == "" || value.length > 20) {
+                    throw new Error("无效命名");
+                }
+                this[DATA].name = value;
+            }
+            get age() {
+                return this[DATA].age;
+            };
+            set age(value) {
+                if (value.trim() == "" || value.length > 20) {
+                    throw new Error("无效命名");
+                }
+                this[DATA].age = value;
+            }
+        }
+        let xj = new User("向军", 25);
+        console.log(xj.name);
+        xj.name = "汤显祖"
+        console.log(xj.name);
+        console.log(xj);
+    </script>
+</body>
+
+</html>

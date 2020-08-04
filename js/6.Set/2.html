@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set元素检测与管理</title>
+</head>
+<body>
+    <script>
+        let set  = new Set(["dududu","dididi"]);
+        // 如果输入为字符串，则将其展开作为处理 相同字符只算一次
+        // let set  = new Set("dididiu");
+        console.log(set);
+
+        // set.size查看元素数量
+        // console.log(set.size);  //2
+
+        // set.has 检测元素存在
+        console.log(set.has("dududu"));
+
+        // set.delete 删除元素
+        console.log(set.delete("dududu"));
+        console.log(set.values());
+
+        // set.clear 彻底清空
+        set.clear();
+        console.log(set);
+    </script>
+</body>
+</html>

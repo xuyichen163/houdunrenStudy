@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片轮换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+
+        }
+
+        main:hover section {
+            transform: translateX(-400px);
+        }
+
+        section {
+            width: 800px;
+            height: 200px;
+            display: flex;
+            transition-duration: 1s;
+            transition-timing-function: step-end;
+        }
+
+        div {
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <div><img src="img/1.jpg" alt=""></div>
+            <div><img src="img/2.jpg" alt=""></div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻转卡片</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #fff;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            perspective: 900px;
+            transition: 2s;
+            transform-style: preserve-3d;
+        }
+
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #f1c40f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: white;
+            backface-visibility: hidden;
+            transition: 2s;
+        }
+
+        div:nth-child(1) {
+            background: #2ecc71;
+        }
+
+        div:nth-child(2) {
+            background: #f1c40f;
+            transform: rotateY(180deg);
+        }
+
+        /* body:hover main div:nth-child(1) {
+            transform: rotateY(180deg);
+        }
+        body:hover main div:nth-child(2) {
+            transform: rotateY(0deg);
+        } */
+        body:hover main {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+    </main>
+</body>
+
+</html>

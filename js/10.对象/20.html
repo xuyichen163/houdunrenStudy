@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象的封装和抽象</title>
+</head>
+
+<body>
+    <script>
+        // 将复杂功能隐藏在内部，只开放给外部少量方法，
+        // 更改对象内部的复杂逻辑不会对外部调用造成影响即抽象。
+
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+            this.info = function () {
+                return this.age > 50 ? "中年人" : "年轻人";
+            };
+            this.show = function () {
+                return `${this.name}:${this.info()}`;
+            };
+        }
+        let lisi = new User("李四", 22);
+        console.log(lisi.show());
+
+        // 上例中的方法和属性仍然可以在外部访问到，
+        // 比如 info方法只是在内部使用，不需要被外部访问到这会破坏程序的内部逻辑。
+
+        // 下面使用闭包特性将对象进行抽象处理
+        将对象的属性统一封装到一个data中
+        function User(name, age) {
+            let data = { name, age };
+            let info = function () {
+                return data.age > 50 ? "中年人" : "年轻人";
+            };
+            this.message = function () {
+                return `${data.name}是${info()}`;
+            };
+        }
+        let lisi = new User("后盾人", 22);
+        console.log(lisi.message());
+
+    </script>
+</body>
+
+</html>

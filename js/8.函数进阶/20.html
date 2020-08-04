@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数方法继承</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    'use strict'
+    function Request() {
+        this.get = function (params) {
+            // console.log(params); //{id: 1, cat: "js"}
+            // console.log(Object.keys(params));// ["id", "cat"]
+            let arr = Object.keys(params).map(k => `${k} = ${params[k]}`).join('&'); //k 为 id 和cat
+            console.log(`https//www.houdunren.com/${this.url}?${arr}`);
+        }
+    }
+    function Article() {
+        this.url = 'article/lists';
+        Request.call(this);
+    }
+
+    let a = new Article();
+    a.get({ id: 1, cat: "js" });
+
+    function User(){
+        this.url = 'user/lists';
+        Request.call(this);
+    }
+
+    let b = new User();
+    b.get({id:1,roll:"admin"});
+</script>
+
+</html>

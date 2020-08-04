@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加元素</title>
+</head>
+
+<body>
+    <script>
+        let array = ['11111', '2222', '3333', '4444'];
+        // console.log(array[1]);
+
+        //把第二位置的数 移到第四个 其他依次移动
+        function move(array, from, to) {
+            if(from < 0 || to > array.length || to < 0 || from > array.length ){
+                console.error("参数有问题");
+                return;//终止函数执行
+            }
+            const result = [...array]; //展开
+            let item = result.splice(from-1, 1);
+            console.log("item:" + item);
+            result.splice(to-1, 0, ...item); //追加
+            return result;
+        }
+        console.table(move(array, 2, 4));
+        // console.table(move(array, 4, 2));
+
+
+
+    </script>
+</body>
+
+</html>

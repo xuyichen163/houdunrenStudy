@@ -1,0 +1,84 @@
+header {
+  border-bottom: solid 5px #17a2b8;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+header .navbar {
+  display: flex;
+  padding: 1.3rem;
+  align-items: center;
+}
+header .navbar .logo {
+  color: #17a2b8;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 1rem;
+}
+header .navbar .logo + label {
+  display: none;
+}
+header .navbar .logo + label + input {
+  display: none;
+}
+header .navbar .collapse {
+  display: flex;
+  flex-grow: 1;
+}
+header .navbar .collapse .links {
+  display: flex;
+  /* 移动到最右侧 */
+  margin-right: auto;
+}
+header .navbar .collapse .links li {
+  margin: 0 10px;
+}
+header .navbar .collapse .links a {
+  color: #777;
+  font-weight: bold;
+}
+header .navbar .collapse .links a:hover {
+  color: #333;
+}
+header .navbar .collapse .form a {
+  border: solid 1px #17a2b8;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  color: #17a2b8;
+  cursor: pointer;
+}
+header .navbar .collapse .form a.form-bg {
+  background: #17a2b8;
+  color: #fff;
+}
+@media only screen and (max-width: 960px) {
+  header .navbar {
+    flex-flow: row wrap;
+  }
+  header .navbar .logo {
+    margin-right: auto;
+  }
+  header .navbar .logo + label {
+    display: block;
+    border: solid 1px #ddd;
+    padding: 0.5rem 1rem;
+    color: #555;
+    cursor: pointer;
+  }
+  header .navbar .logo + label + input {
+    display: none;
+  }
+  header .navbar .logo + label + input:checked + .collapse {
+    display: block;
+  }
+  header .navbar .collapse {
+    display: none;
+    width: 100%;
+    flex-flow: column;
+  }
+  header .navbar .collapse .links {
+    margin-bottom: 1.5rem;
+    flex-flow: column;
+  }
+  header .navbar .collapse .links li {
+    margin: 0.5rem 0;
+  }
+}

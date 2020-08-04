@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vueJS数据绑定的容器更新</title>
+</head>
+
+<body>
+    <input type="text" v-model="content">
+    <h4 v-bind="content"></h4>
+    <input type="text" v-model="title">
+    <input type="text" v-model="title">
+    <div v-bind="title"></div>
+</body>
+<script>
+    // 数据仓库存储数据
+    function View() {
+        let proxy = new Proxy({}, {
+            get(obj, peoperty) { },
+            set(obj, property, value) {
+                // console.log(value);
+                obj[property] = value;
+                document.querySelectorAll(`[v-model="${property}"],[v-bind="${property}"]`).forEach(el => {
+                    el.innerHTML = value;
+                    el.value = value;
+                })
+                return true;
+            },
+        });
+        this.init = function () {
+            // 监听包含数据的文本框
+            const els = document.querySelectorAll("[v-model]");
+            els.forEach(item => {
+                item.addEventListener("keyup", function () {
+                    // console.log(this.getAttribute("v-model")); //title
+                    // 触发之后更改数据仓库
+                    proxy[this.getAttribute("v-model")] = this.value;
+                });
+            });
+        };
+    };
+    new View().init();
+</script>
+
+</html>

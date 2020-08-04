@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .parent{
+            display: table;
+        }
+        .child{
+            display:table-cell;
+            vertical-align: middle;
+        } */
+
+        /* .parent{
+            display: flex;
+            align-items: center;
+        } */
+
+        .parent {
+            position: relative;
+        }
+
+        .child {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">content</div>
+    </div>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+    </table>
+</body>
+
+</html>

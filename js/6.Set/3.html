@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转化</title>
+</head>
+
+<body>
+    <script>
+        // let set = new Set(['chenyansi', 'katherine']);
+        //可以使用点语法 或 Array.form 静态方法将Set类型转为数组，这样就可以使用数组处理函数了
+        // console.log(Array.from(set));
+        // console.log([...set]);
+
+        // 返回大于五的元素
+        let set = new Set("123456789");
+        //filter 过滤出满足return后面的条件元素 
+        let arr = [...set].filter(function(value){
+            return value < 5;
+        })
+        set = new Set(arr);
+        console.log(set);
+
+        // 去除重复元素
+        // let arr = [1,2,3,4,5,6,9,3,2,3,4,3,2];
+        // arr = [...new Set(arr)];
+        // console.log(arr);
+    </script>
+</body>
+
+</html>

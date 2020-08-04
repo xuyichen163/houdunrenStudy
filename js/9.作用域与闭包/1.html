@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+</head>
+
+<body>
+    <div>
+        <p>全局作用域只有一个，每个函数又都有作用域（环境）。</p>
+        <p>编译器运行时会将变量定义在所在作用域</p>
+        <p>使用变量时会从当前作用域开始向上查找变量</p>
+        <p>作用域就像攀亲亲一样，晚辈总是可以向上辈要些东西</p>
+    </div>
+    <button>点击它</button>
+    <script>
+        // 1、全局环境不会被回收 除非人为关闭
+        let title = '孝义,你好';
+        function click(){
+            alert(title);
+          }
+        document.querySelector('button').addEventListener('click', click);
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON序列化和自定义toJSON</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let hd = {
+        "title": "后盾人",
+        "url": "houdunren.com",
+        "teacher": {
+            "name": "向军大叔",
+        },
+        toJSON: function () {
+            return {
+                title: this.title,
+                url: this.url
+            }
+        }
+    }
+    // 根据第二个参数指定保存的属性
+    console.log(JSON.stringify(hd, null, 2));//{"title":"后盾人"}
+    // 第三个是参数用来控制TAB数量，如果字符串则为前导字符。
+    // 为数据添加 toJSON 方法来自定义返回格式
+</script>
+
+</html>

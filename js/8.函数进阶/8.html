@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let hd = [1, 2, 3, 4, 5, 6].filter(function (value, index) {
+    //     return value<= 3;
+    // });
+
+    // let hd = [1, 2, 3, 4, 5, 6].filter((value, index) => {
+    //     return value <= 3;
+    // });
+
+    // 当有一行时，包含return
+    // 函数体为单一表达式时不需要 return 返回处理，系统会自动返回表达式计算结果。
+    // 只有一个参数时可以省略括号
+    let hd = [1, 2, 3, 4, 5, 6].filter((value) => value <= 3);
+    console.log(hd);
+
+    let yi = [1, 2, 3, 4, 5, 6].reduce((a, b) => a + b);
+    console.log(yi);
+
+    // 考虑this  所以不能适用于是所有的函数 回调函数 ，递归函数等不适用
+</script>
+
+</html>

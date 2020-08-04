@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是闭包及与其他语言对比实例</title>
+</head>
+
+<body>
+    <p>闭包指子函数可以访问外部作用域变量的函数特性，即使在子函数作用域外也可以访问。</p>
+    <p> 如果没有闭包那么在处理事件绑定，异步请求时都会变得困难。</p>
+    <p>JS中的所有函数都是闭包</p>
+    <p>闭包一般在子函数本身作用域以外执行，即延伸作用域</p>
+
+    <script>    
+        function hd(){
+            let n = 1;
+            return function show(){
+                console.log(++n);
+            }
+        }
+        let a = hd();
+        a();
+        a();
+    </script>
+</body>
+
+</html>

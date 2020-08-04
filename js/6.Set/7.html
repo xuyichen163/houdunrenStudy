@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weakset</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+
+    <script>
+        // WeakSet的值必须为对象类型
+        let weakset0 = new WeakSet([["duyudu"], ["chenyansi"]]);
+        // let weakset0 = new WeakSet();
+        // weakset0.add(["dududu","dididi"]);
+        console.log(weakset0);
+
+        // Invalid value used in weak set 数组
+        // let weakset1 = new WeakSet(["duyudu"]);
+        // console.log(weakset1);
+
+        //Invalid value used in weak set
+        // let weakset2 =new WeakSet(["hdcms", "houdunren"]);
+        // console.log(weakset2);
+
+        let nodes = new WeakSet();
+        let div = document.querySelectorAll("div");
+
+        div.forEach(function (value) {
+            // console.log(value);
+            //添加操作
+            nodes.add(value);
+        });
+        
+        //删除操作
+        nodes.delete(div[0]);
+
+        //检索判断
+        console.log(nodes.has(div[1]));
+        console.log(nodes);
+
+    </script>
+</body>
+
+</html>

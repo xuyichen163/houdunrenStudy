@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet">
+    <title>旋转菜单</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+        }
+
+        nav {
+            width: 400px;
+            height: 400px;
+            background: transparent;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+        }
+
+        /* 添加中间的圆 */
+        nav::before {
+            content: '';
+            width: 200px;
+            height: 200px;
+            background: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 添加文字 */
+        nav::after {
+            content: '旋转菜单';
+            color: #ecf0f1;
+            position: absolute;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 3px 3px 0px #34495e;
+            z-index: 1;
+        }
+
+        ul {
+            transition: 0.5s;
+            width: 300px;
+            height: 300px;
+            transform: scale(0);
+        }
+
+        nav:hover ul {
+            transform: scale(1);
+        }
+
+        ul li {
+            list-style: none;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #c0392b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            font-size: 2.5em;
+            color: white;
+            transition: 1s;
+            transform-origin: 150px 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0.8);
+        }
+
+        ul li span {
+            transition: 1s;
+        }
+
+        nav:hover li:nth-child(1) {
+            transform: rotate(40deg);
+        }
+
+        nav:hover li:nth-child(1)>span {
+            transform: rotate(1040deg);
+        }
+
+        nav:hover li:nth-child(2) {
+            transform: rotate(80deg);
+        }
+
+        nav:hover li:nth-child(2)>span {
+            transform: rotate(1000deg);
+        }
+
+        nav:hover li:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        nav:hover li:nth-child(3)>span {
+            transform: rotate(960deg);
+        }
+
+        nav:hover li:nth-child(4) {
+            transform: rotate(160deg);
+        }
+
+        nav:hover li:nth-child(4)>span {
+            transform: rotate(560deg);
+        }
+
+        nav:hover li:nth-child(5) {
+            transform: rotate(200deg);
+        }
+
+        nav:hover li:nth-child(5)>span {
+            transform: rotate(880deg);
+        }
+
+        nav:hover li:nth-child(6) {
+            transform: rotate(240deg);
+        }
+
+        nav:hover li:nth-child(6)>span {
+            transform: rotate(1560deg);
+        }
+
+        nav:hover li:nth-child(7) {
+            transform: rotate(280deg);
+        }
+
+        nav:hover li:nth-child(7)>span {
+            transform: rotate(2240deg);
+        }
+
+        nav:hover li:nth-child(8) {
+            transform: rotate(320deg);
+        }
+
+        nav:hover li:nth-child(8)>span {
+            transform: rotate(2200deg);
+        }
+
+        nav:hover li:nth-child(9) {
+            transform: rotate(360deg);
+        }
+
+        nav:hover li:nth-child(9)>span {
+            transform: rotate(1800deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><span><i class="fa fa-address-book" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-adjust" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-bars" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-book" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-bug" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-compress" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-ban" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-beer" aria-hidden="true"></i></span></li>
+            <li><span><i class="fa fa-bus" aria-hidden="true"></i></span></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

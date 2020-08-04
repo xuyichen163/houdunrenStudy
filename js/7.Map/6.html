@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制表单提交</title>
+</head>
+
+<body>
+    <form action="http://doc.houdunren.com" onsubmit="return post()">
+        接受协议:
+        <input type="checkbox" name="agreement" message="请接受接受协议" />
+        我是学生:
+        <input type="checkbox" name="student" message="网站只对学生开放" />
+        <input type="submit" />
+    </form>
+
+
+    <script>
+        // 当不接受协议时无法提交表单，并根据自定义信息提示用户
+        function post() {
+            let map = new Map();
+            // 搜索包含message属性的元素
+            let mess = document.querySelectorAll("[message]");
+            // console.log(mess);
+
+            mess.forEach(item => {
+                map.set(item, {
+                    message: item.getAttribute("message"),
+                    status: item.checked
+                })
+            });
+            // console.log(map);
+
+            // 遍历map
+
+            // every 全部为真才为真
+            return status = [...map].every(([item, config]) => {
+                // 如果status为true 则不弹出提示框
+                config.status || alert(config.message);
+                return config.status;
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过变量改变this指针</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // 箭头函数可以使 this 一直指向对象
+    // this 指向父作用域中定义引用this的变量
+    let Lesson = {
+        site: "后盾人",
+        lists: ["js", "css", "mysql"],
+        show() {
+            return this.lists.map((title) => `${this.site}-${title}`);
+        }
+    }
+    console.log(Lesson.show());
+
+
+    // this
+    // 对象中的函数叫方法
+    // 调用函数时 this 会隐式传递给函数指函数调用时的关联对象，
+    // 也称之为函数的上下文。
+    let wdu = {
+        name: '后盾人',
+        show: function () {
+            return this.name;
+        }
+    };
+    // console.log(wdu.show());
+
+    // 函数调用
+    // 全局环境下 this 就是 window 对象的引用
+    // console.log(this == window); //true
+
+    // 使用严格模式 在全局函数内 this 为 undefined 
+
+
+    // 方法调用
+    // 函数为对象的方法时this 指向该对象
+    // 可以使用多种方式创建对象，下面是使用构造函数创建对象
+
+    // 构造函数
+    // 函数当被 new 时即为构造函数，一般构造函数中包含属性与方法。函数中的上下文指向到实例对象。
+    // 构造函数主要用来生成对象，里面的this默认就是指当前对象
+
+    function User() {
+        this.name = '后盾人';
+        this.say = function () {
+            console.log(this);
+            return this.name;
+        };
+    }
+    let hd = new User();
+    console.log(hd.say());  //后盾人
+
+    // 对象字面量
+
+    // 下例中的hd函数不属于对象方法所以指向window
+    // show属于对象方法执向 obj对象
+    let obj = {
+        site: "后盾人",
+        show() {
+            console.log(this.site); //后盾人
+            console.log(`this in show method: ${this}`); //this in show method: [object Object]
+            function hd() {
+                console.log(typeof this.site); //undefined
+                console.log(`this in hd function: ${this}`); //this in hd function: [object Window]
+            }
+            hd();
+        }
+    };
+    obj.show();
+
+    let Lesson = {
+        site: "后盾人",
+        lists: ["js", "css", "mysql"],
+        show() {
+
+            const that = this;
+            return this.lists.map(function (title) {
+                return `${that.site}-${title}`;
+            });
+
+            // map 传入参数 this 作为map函数内的this
+            // return this.lists.map(function(title){
+            //     return `${this.site}-${title}`;
+            // },this);
+        }
+    }
+    console.log(Lesson.show());
+</script>
+
+</html>

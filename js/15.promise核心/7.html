@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宏任务和微任务的处理顺序</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // const promise = new Promise(resolve => resolve("success"));
+    // promise.then(alert);
+    // alert("houdunren.com");
+    // promise.then(() => {
+    //     alert("后盾人");
+    // });
+    // houdunren.com  -- success -- 后盾人 
+
+    setTimeout(() => {
+        console.log("object");
+    }, 1000);
+    console.log("我在这");
+    // 我在这 -- object
+
+    // promise 创建时即立即执行即同步任务，
+    // then 会放在异步微任务中执行，需要等同步任务执行后才执行。
+    // 程序需要将主任务执行完成才会执行异步队列任务
+
+</script>
+
+</html>

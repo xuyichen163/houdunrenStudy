@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环操作中引用类型使用技巧</title>
+</head>
+
+<body>
+    <style>
+        .disable{
+            color: blue;
+        }
+    </style>
+    <ul>
+        <li>yiersan</li>
+        <li>hannatusei</li>
+    </ul>
+    <script>
+        // let lessons = [
+        //     { title: '媒体查询响应式布局', catogory: "css" },
+        //     { title: 'Flex 弹性盒模型', catogory: "css" },
+        //     { title: 'MYSQL 多表查询随意操作', catogory: "mysql" },
+        // ];
+
+        // for (let i = 0; i < lessons.length; i++) {
+        //     lessons[i].title = `辰砚肆: ${lessons[i].title}`;
+        // }
+
+        // for (const value of lessons) {
+        //     value.title = `辰砚肆: ${value.title}`;
+        // }
+
+        // for (const key in lessons) {
+        //    lessons[key].title = `辰砚肆: ${lessons[key].title}`;
+        // }
+        // foreach 使函数作用在每个数组元素上，但是没有返回值。
+        // lessons.forEach(function(item,index,lessons){
+        //     item.title = item.title.substr(0,2);
+        // });
+        // console.table(lessons);
+        
+        let lis = document.querySelectorAll("ul li");
+        console.log(lis);
+
+        // Array.from 将其他类型转换为数组类型
+        // console.log(Array.from(lis));
+        // console.log(...lis);
+        lis.forEach(function(item){
+            // console.log(item);
+            item.addEventListener("click", function(){
+                this.classList.toggle('disable');
+            });
+        })
+
+    </script>
+</body>
+
+</html>

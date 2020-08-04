@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map类型特点与创建方法</title>
+</head>
+
+<body>
+    <script>
+        // Map是一组键值对的结构，用于解决以往不能用对象做为键的问题
+        // 具有极快的查找速度
+        // 函数、对象、基本类型都可以作为键或值
+
+        // 对象的键一定是字符串
+        let obj = {
+            name: "seu.edu.cn",
+            // 1: "seu.edu.cn",
+        }
+        // console.log(obj.name);
+        console.log(obj);
+
+        //set 方法添加元素
+        // let map = new Map();
+        // map.set("name","seu.edu.cn");
+        // map.set(function(){},"fun");
+        // map.set({},"obj");
+        // console.log(map);
+
+        let map = new Map([['hdcms','开源系统'],['duyudu',"shiwode"]]);
+        console.log(map);
+    </script>
+</body>
+
+</html>

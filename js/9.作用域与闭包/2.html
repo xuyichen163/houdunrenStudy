@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作用域和环境</title>
+</head>
+
+<body>
+    <p>作用域 --- 影响的范围</p>
+
+    <script>
+        // 2、默认条件下 函数内变量只能在函数内使用 函数外不能调用
+        // 函数内的变量每次调用生成一次新的，与上次使用无关。
+        // 里面能访问到外面，外面不能访问到里面
+        // 函数被执行后其环境变量将从内存中删除
+        // 下面函数在每次执行后将删除函数内部的url变量。
+        let title = '嘟嘟嘟';
+        function show() {
+            let url = "katherine";
+            console.log(url);
+        }
+        show();
+    </script>
+</body>
+
+</html>

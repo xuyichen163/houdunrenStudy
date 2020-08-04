@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高效的find 和findIndex</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6];
+
+        //遍历元素
+        // arr.find(function(item) {
+        //     console.log(item);
+        // });
+        
+        //找到则返回值 否则返回undefine
+        // let res = arr.find(function(item) {
+        //     // return true;
+        //     return item == 2;
+        // });
+        // console.log(res);
+
+        //针对引用类型 比较内存地址 so includes 不适用于 引用类型 
+        let lessons = [{name:"js"}, {name:"css"}, {name:"mysql"}];
+        // console.log(lessons.includes({name:"js"}));
+        console.log(lessons.find(function(item){
+            // console.log(item);
+            return item.name == 'css';
+        }));
+
+        console.log(lessons.findIndex(function(item){
+            // console.log(item);
+            return item.name == 'css';
+        }));
+    </script>
+</body>
+</html>

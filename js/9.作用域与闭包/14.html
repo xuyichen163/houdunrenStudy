@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用闭包根据字段排序商品</title>
+</head>
+
+<body>
+    <script>
+        let lessons = [
+            {
+                title: "媒体查询响应式布局",
+                click: 89,
+                price: 12
+            },
+            {
+                title: "FLEX 弹性盒模型",
+                click: 45,
+                price: 120
+            },
+            {
+                title: "GRID 栅格系统",
+                click: 19,
+                price: 67
+            },
+            {
+                title: "盒子模型详解",
+                click: 29,
+                price: 300
+            }
+        ];
+        // // 按价格升序
+        // let result = lessons.sort(function(a,b){
+        //     return a.price>b.price?  1: -1;
+        // })
+        // console.table(result);
+
+        // // 按点击数升序
+        // let result2 = lessons.sort(function(a,b){
+        //     return a.click>b.click?  1: -1;
+        // })
+        // console.table(result2);
+
+        function order(field, type = 'asc') {
+            if (type == 'asc') {
+                return function (a, b) {
+                    return a[field] > b[field] ? 1 : -1;
+                };
+            } else {
+                return function (a, b) {
+                    return a[field] > b[field] ? -1 : 1;
+                };
+            }
+        }
+        let res = lessons.sort(order('price'));
+        console.table(res);
+
+        let res1 = lessons.sort(order('click'));
+        console.table(res1);
+        //.访问一个不存在的属性时 会创建新属性  []不回创建新属性
+        let res2 = lessons.sort(order('click', 'desc'));
+        console.table(res2);
+
+    </script>
+</body>
+
+</html>

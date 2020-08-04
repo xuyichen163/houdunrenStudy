@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise微任务处理机制</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // pending 准备阶段
+    // resolved 成功状态
+    // rejected 失败状态
+    // promise括号内的是准备过程 
+    new Promise((resolve, reject) => {
+        resolve("成功状态");
+        // reject("失败状态");
+    }).then(value => {
+        console.log("成功处理业务");
+    }, reason => {
+        console.log("失败给予提示说明");
+    });
+
+</script>
+
+</html>

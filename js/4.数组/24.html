@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定filter</title>
+</head>
+<body>
+    <script>
+        let hd = [1,2,3,4];
+        //except 要过滤的元素
+        //若except中不包含 数组中的元素  则将元素加入新数组
+        function filter(array, except){
+            let newArray = [];
+            for (const value of array) {
+                if(!except.includes(value)){
+                    newArray.push(value);
+                }
+            }
+            return newArray;
+        }
+        console.table(filter(hd,[2,3]));
+    </script>
+</body>
+</html>

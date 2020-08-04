@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用访问器批量设置属性</title>
+</head>
+<body>
+    <script>
+         "use strict";
+        const web = {
+            name : "肉肉",
+            url : "rou.com.cn",
+            set site(value){
+                [this.name,this.url]= value.split(",");
+            },
+            get site(){
+                return `${this.name} ${this.url}`;
+            },
+        };
+        web.site = "东南大学,seu.edu.cn";
+        console.log(web.site);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind原来是这么用的</title>
+</head>
+
+<body>
+    <button> 炸鸡好吃！</button>
+</body>
+<script>
+    // bind 和 call apply 修改this
+    // bind()是将函数绑定到某个对象，
+    // 不立刻执行 有两次传参的机会 
+    // 比如 a.bind(hd) 可以理解为将a函数绑定到hd对象上即 hd.a() 。
+
+    // 与 call / apply 不同bind不会立即执行
+    // bind 是复制函数形为会返回新函数
+    function show() {
+        console.log("芝士奶香炸鸡");
+    }
+
+    // show.call({ name: "芝士奶香炸鸡" });//执行
+    // show.bind({ name: "芝士奶香炸鸡" });//不执行
+    // show.bind({ name: "芝士奶香炸鸡" })();//执行
+
+    let a = function () { };
+    let b = a;
+    // console.log(a instanceof Object);
+    // console.log((a===b));//传址 true
+
+    // bind 新复制的函数
+    let c = a.bind();
+    // console.log((a === c));  //false
+
+    function hd(a, b) {
+        console.log(a, b);
+        return this.f + a + b;
+    }
+    // console.log(hd.call({ f: 1 }, 2, 3)); //前面是调用的对象 后面是参数
+    let fun = hd.bind({ f: 1 }, 2, 3); //前面是调用的对象 后面是参数
+    fun(1, 4);  //2,3  先来先算
+
+
+    document.querySelector("button").addEventListener("click", function (event) {
+        document.write(this.url + event.target.innerHTML)
+    }.bind({ url: "sangedashudezhajidain.com" }));
+</script>
+
+</html>

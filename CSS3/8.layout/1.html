@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>布局</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px;
+        }
+
+        main {
+            width: 300px;
+            height: 200px;
+            border: solid 10px blueviolet;
+            position: relative;
+            overflow: scroll;
+        }
+
+        main article {
+            height: 600px;
+        }
+
+        main article div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        main article div:nth-of-type(1) {
+            background: red;
+            left: 0px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<main>
+    <article>
+        <div></div>
+    </article>
+</main>
+
+</html>

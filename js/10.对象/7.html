@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构操作的简写形式与变量结构</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let web = { name: "后盾人", url: "houdunren.com" };
+    // let { name, url } = web;
+    // console.log(name); //后盾人
+
+    // let [, url] = ['后盾人', 'houdunren.com'];
+    // console.log(url);//houdunren.com
+
+    // let { name } = { name: '后盾人', url: 'houdunren.com' };
+    // console.log(name); //后盾人
+
+    let name = "后盾人", url = "houdunren.com";
+    //标准写法如下
+    let hd = { name: name, url: url };
+    console.log(hd);  //{name: "后盾人", url: "houdunren.com"}
+
+    //如果属性和值变量同名可以写成以下简写形式
+    let opt = { name, url };
+    console.log(opt); //{name: "后盾人", url: "houdunren.com"}
+</script>
+
+</html>

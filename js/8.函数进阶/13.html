@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回调函数</title>
+</head>
+
+<body>
+    <button id="hd">button</button>
+    <button id="but">but</button>
+</body>
+<script>
+    // 在某个时刻被其他函数调用的函数称为回调函数，
+    // 比如处理键盘、鼠标事件的函数。
+    document.getElementById("hd").addEventListener("click", function () {
+        alert(this.innerHTML);
+    })
+
+    document.getElementById("but").addEventListener("click", function () {
+        alert(this.innerHTML);
+    });
+
+    let hd = ([1, 2, 3]).map(item => item + 10);
+    console.log(hd)
+</script>
+
+</html>
