@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="div1" data="url">seu.edu.cn</div>
+        <div class="div2">seu.edu.com</div>
+        <!-- 注释 -->
+        <div class="div3">upc.edu.cn</div>
+    </div>
+    <script>
+        // 节点类型
+        let divList = document.getElementById("app").childNodes;
+        // console.log(typeof divList);  //object
+        // console.dir(divList);
+        // for (const key of divList) {
+        //     console.log(`${key.nodeName} :${key.nodeType}`);
+        // }
+        console.log("...............");
+        [...divList].map((item) => {
+            // console.log(`${item.nodeName} :${item.nodeType}`);
+            console.log(item);
+        })
+
+    </script>
+</body>
+
+</html>

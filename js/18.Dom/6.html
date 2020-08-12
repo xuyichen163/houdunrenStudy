@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h11">132</h1>
+    <script>
+        let h11 = document.getElementById("h11");
+        Object.assign(h11.style, {
+            color: 'white',
+            backgroundColor: 'green',
+        });
+        Object.assign(h11, {
+            color: 'red',
+            change() {
+                this.innerHTML = "你好";
+                this.style.color = "blue";
+            },
+            onclick() {
+                this.change();
+            }
+        })
+
+        // 对象特征 
+        // title用于显示提示文档
+    </script>
+</body>
+
+</html>

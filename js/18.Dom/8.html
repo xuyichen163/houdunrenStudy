@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多标签递归</title>
+</head>
+
+<body>
+    <div id="hs">
+        <h1>seu.edu.cn</h1>
+        <h2>金陵</h2>
+    </div>
+    <script>
+        //获得标签下的所有标签节点
+        function fds(el) {
+            const items = [];
+            [...el.childNodes].map((node) => {
+                if(node.nodeType === 1){
+                    items.push(node,...fds(node));
+                }
+            })
+            return items;
+        }
+        fds(document);
+        console.log(fds(document));
+    </script>
+</body>
+
+</html>

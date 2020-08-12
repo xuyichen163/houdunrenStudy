@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定时器模块 可放多个定时器   执行结束按照依次放入宏任务队列中
+        // 定时器会放入异步任务队列，也需要等待同步任务执行完成后执行
+        // 当有setTimeout时，将其放在定时器模块，计时。 计时结束放在宏任务队列中
+        // 当主线程任务执行结束，到宏任务队列遍历任务，再将定时器任务加载到主任务，直接输出里面的内容
+
+        // setTimeout(() => {
+        //     console.log("定时器 1");
+        // }, 10000);
+        // setTimeout(() => {
+        //     console.log("定时器 2");
+        // }, 5000);
+        // console.log("start");
+        // for (let i = 0; i < 10000; i++) {
+        //     console.log("");
+        // }
+
+        //start
+        // 定时器 2
+        // 定时器 1
+
+       
+
+    </script>
+</body>
+
+</html>

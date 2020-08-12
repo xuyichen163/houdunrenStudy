@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 拆解任务
+        // function hd() {
+        //     for (let i = 0; i < num; i++) {
+        //         count += num--;
+        //     }
+        //     console.log(count);
+        // };
+        // let num = 321;
+        // let count = 0;
+        // hd();
+        // console.log("object");
+
+        function hd() {
+            for (let i = 0; i < 100000; i++) {
+                if (num <= 0) break;
+                count += num--;
+            }
+
+            if (num > 0) {
+                console.log(num);
+                setTimeout(hd);
+            }else{
+                console.log(count);
+            }
+
+        };
+        let num = 87654321;
+        let count = 0;
+        hd();
+        console.log("object");
+
+
+
+
+    </script>
+</body>
+
+</html>
