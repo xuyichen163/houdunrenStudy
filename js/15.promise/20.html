@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>interval</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            position: absolute;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="div1"></div>
+    <script>
+        // function interval(delay = 1000, callback) {
+        //     let id = setInterval(() => callback(id), delay);
+        // };
+        // interval(100, timeid => {
+        //     const div = document.getElementById("div1");
+        //     let left = parseInt(window.getComputedStyle(div).left);
+        //     div.style.left = left + 10 + "px";
+        //     if (left > 200) {
+        //         clearInterval(timeid)
+        //         interval(200, timeid => {
+        //             let width = parseInt(window.getComputedStyle(div).width);
+        //             div.style.width = (width - 10) + "px";
+        //             if (width <= 0) clearInterval(timeid);
+        //         })
+        //     }
+        // });
+
+
+        //改写
+        function interval(delay = 1000, callback) {
+            return new Promise(resolve => {
+                let id = setInterval(() => {
+                    callback(id, resolve);
+                }, delay);
+            });
+        }
+
+        interval(100, (id, resolve) => {
+            const div = document.getElementById("div1");
+            let left = parseInt(window.getComputedStyle(div).left);
+            div.style.left = left + 10 + "px";
+            if (left > 300) {
+                clearInterval(id);
+                resolve(div);
+            }
+        }).then(div => {
+            return interval(200, (tid, resolve) => {
+                let width = parseInt(window.getComputedStyle(div).width);
+                div.style.width = (width - 10) + "px";
+                if (width <= 40) {
+                    clearInterval(tid);
+                    resolve(div);
+                }
+            })
+        }).then(div => {
+            div.style.backgroundColor = "blue";
+        })
+    </script>
 </body>
+
 </html>

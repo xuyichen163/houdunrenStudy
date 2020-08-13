@@ -29,7 +29,9 @@
     // 第一个参数 到时间之后要执行的任务 执行的时间
     function interval(callback, delay = 50) {
         // 定时器都会有一个id
-        let id = setInterval(() => { callback(id); }, delay);
+        let id = setInterval(() => {
+                 callback(id); 
+            }, delay);
         // setInterval() ：按照指定的周期（以毫秒计）来调用函数或计算表达式。
         // 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭
         // 参数有两个 第一个是调用的函数 第二个是调用的周期
@@ -47,12 +49,13 @@
         let left = parseInt(window.getComputedStyle(div).left);
         // console.log(left);
         div.style.left = left + 10 + "px";
+
         if(left>= 200){
             clearInterval(timeId);
             interval(timeId =>{
                 const width = parseInt(window.getComputedStyle(div).width);
                 div.style.width = width - 1 + "px";
-                if(width <= 0) clearInterval;
+                if(width <= 0) clearInterval(timeId);
             },50)
         }
     })

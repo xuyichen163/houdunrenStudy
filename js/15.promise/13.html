@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>其他类型的promise封装</title>
 </head>
+
 <body>
-    
+    <script>
+        //有then 方法的类  对象 静态方法 可以转换为 promise 
+        new Promise((resolve, reject) => {
+            resolve({
+                then(resolve, reject) {
+                    resolve("解决状态");
+                }
+            });
+        }).then(v => {
+            console.log(`fulfilled: ${v}`);
+            return {
+                then(resolve, reject) {
+                    setTimeout(() => {
+                        reject("失败状态");
+                    }, 2000);
+                }
+            };
+        }).then(null, error => {
+            console.log(`rejected: ${error}`);
+        });
+
+    </script>
 </body>
+
 </html>

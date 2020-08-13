@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>finally</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div>loading</div>
+    <script>
+        // 无论状态是resolve 或 reject 都会执行此动作，finally 与状态无关。
+        const promise = new Promise((resolve, reject) => {
+            document.querySelector("div").style.display="block";
+            setTimeout(()=>{
+                resolve("success");
+                reject("failed");
+            },5000);
+        }
+        ).then(msg => {
+            console.log("resolve");
+        }).catch(msg => {
+            console.log("rejected");
+        }).finally(() => {
+            console.log("resolve/reject 都会执行");
+            document.querySelector("div").style.display = "none";
+        })
+    </script>
 </body>
+
 </html>

@@ -12,7 +12,8 @@
 </body>
 <script>
     // JavaScript 中存在很多异步操作, 
-    // Promise 将异步操作队列化，按照期望的顺序执行，返回符合预期的结果。可以通过链式调用多个 Promise 达到我们的目的。
+    // Promise 将异步操作队列化，按照期望的顺序执行，返回符合预期的结果。
+    // 可以通过链式调用多个 Promise 达到我们的目的。
     // Promise 在各种开源库中已经实现，现在标准化后被浏览器默认支持。
     // promise 是一个拥有 then 方法的对象或函数
 
@@ -21,7 +22,7 @@
         resolve("我是肯德基，你的餐已经做好了");
     });
     let dad = kfc.then(msg => {
-        console.log(`收到肯德基消息: ${msg}`);
+        console.log(`收到肯德基消息: ${msg}`);  //收到肯德基消息: 我是肯德基，你的餐已经做好了
         return {
             then(resolve) {
                 setTimeout(() => {
@@ -32,7 +33,7 @@
     });
     let son = dad.then(msg => {
         return new Promise((resolve, reject) => {
-            console.log(`收到爸爸消息: ${msg}`);
+            console.log(`收到爸爸消息: ${msg}`);//收到爸爸消息: 孩子，我吃了两秒了，不辣，你可以吃了
             setTimeout(() => {
                 resolve("妈妈，我和向军爸爸吃完饭了");
             }, 2000);

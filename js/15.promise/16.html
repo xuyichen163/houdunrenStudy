@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>自定义错误处理</title>
 </head>
+
 <body>
-    
+    <script src="./js/ajax.js"></script>
+    <script>
+        let url = "";
+        ajax(url).then(value => {
+            console.log(value);
+        }).catch(error => {
+          if(error instanceof ParamError){
+              console.log(error.message);
+          }
+          if(error instanceof HttpError){
+              alert(error.message);
+          }
+        })
+    </script>
 </body>
+
 </html>

@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        // 函数声明
+        async function get(name) {
+            return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+        }
+        get("后盾人").then(user => {
+            console.log(user);
+        });
+
+        //函数表达式声明
+        let get = async function (name) {
+            return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+        };
+        get("后盾人").then(user => {
+            console.log(user);
+        });
+        // 对象方法声明
+        let hd = {
+            async get(name) {
+                return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+            }
+        };
+        hd.get("后盾人").then(user => {
+            console.log(user);
+        });
+
+        
+    </script>
 </body>
+
 </html>

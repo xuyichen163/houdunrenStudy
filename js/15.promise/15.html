@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>promise 多种错误检测以及 catch 使用</title>
 </head>
+
 <body>
-    
+    <script>
+        // catch用于失败状态的处理函数，等同于 then(null,reject){}
+        // 建议使用 catch 处理错误
+        // 将 catch 放在最后面用于统一处理前面发生的错误
+        new Promise((resolve, reject) => {
+            // resolve("yes");
+
+            // 错误的事例
+
+            // reject("no");
+            // reject(new Error("promise fail"));
+            throw new Error("fail")
+        }).then(value => {
+            console.log("成功: " + value);
+        }, reason => {
+            console.log("失败: " + reason.message);
+        }).catch(error => {
+            console.log("失败了");
+        })
+    </script>
 </body>
+
 </html>

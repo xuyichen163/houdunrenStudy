@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>then返回值的处理技巧</title>
 </head>
+
 <body>
-    
+    <script>
+        //先执行 resolve 然后执行 return value 默认是fullfilled状态 ranhou clg value
+        let p1 = new Promise((resolve, reject) => {
+            resolve("fullfilled");
+            reject("fail");
+        }).then(value => {
+            return value;
+        }, reason => {
+            console.log("error");
+        }).then(value => {
+            console.log(value);
+        })
+        //fullfilled
+    </script>
 </body>
+
 </html>

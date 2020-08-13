@@ -15,7 +15,9 @@
     <script>
         //获得标签下的所有标签节点
         function fds(el) {
+            //存储标签节点
             const items = [];
+            //对该节点的子节点进行遍历 查看是否是标签节点 如果满足压入数组
             [...el.childNodes].map((node) => {
                 if(node.nodeType === 1){
                     items.push(node,...fds(node));

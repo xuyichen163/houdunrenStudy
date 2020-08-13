@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 一般await后面是外部其它的promise对象
+        // promise 创建时即立即执行即同步任务，then 会放在异步微任务中执行，需要等同步任务执行后才执行。
+        async function async1() {
+            console.log(1);
+            await async2();
+            console.log(2);
+        }
+        async function async2() {
+            console.log(3);
+        }
+        async1();
+        new Promise(function (resolve) {
+            console.log(4);
+            resolve();
+        }).then(() => {
+            console.log(5);
+        })
+        //13425
+    </script>
+</body>
+
+</html>

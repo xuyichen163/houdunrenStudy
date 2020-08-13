@@ -16,10 +16,10 @@
     // rejected 失败状态
     // promise括号内的是准备过程 
     new Promise((resolve, reject) => {
-        resolve("成功状态");
+        // resolve("成功状态");
         // reject("失败状态");
     }).then(value => {
-        console.log("成功处理业务");
+        console.log(value + ": 成功处理业务");
     }, reason => {
         console.log("失败给予提示说明");
     });

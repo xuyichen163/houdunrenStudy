@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        async function p1() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    console.log("houdunren");
+                    resolve();
+                }, 2000);
+            });
+        }
+        async function p2() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    console.log("hdcms");
+                    resolve();
+                }, 2000);
+            });
+        }
+        async function hd() {
+            // //一次等待执行
+            // await p1();
+            // await p2();
+
+            //并行执行
+            // await Promise.all([p1(), p2()]);
+            
+            //让promise先执行后再使用await处理结果
+            let h1 = p1();
+            let h2 = p2();
+            await h1;
+            await h2;
+        }
+        hd();
+
+    </script>
 </body>
+
 </html>

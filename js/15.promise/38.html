@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        // async 内部发生的错误，会将必变promise对象为rejected 状态，所以可以使用catch 来处理
+        async function hd() {
+            console.log(houdunren);
+        }
+        hd().catch(error => {
+            throw new Error(error);
+        });
+
+    </script>
 </body>
+
 </html>

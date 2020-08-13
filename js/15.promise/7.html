@@ -12,18 +12,21 @@
 </body>
 <script>
 
-    // const promise = new Promise(resolve => resolve("success"));
-    // promise.then(alert);
-    // alert("houdunren.com");
-    // promise.then(() => {
-    //     alert("后盾人");
-    // });
-    // houdunren.com  -- success -- 后盾人 
+    const promise = new Promise(resolve => {
+        //执行成功 执行 resolve函数
+        resolve("success");
+    });
+    promise.then(alert);
+    alert("houdunren.com");
+    promise.then(() => {
+        alert("后盾人");
+    });
+    // houdunren.com  -- success -- 后盾人
 
-    setTimeout(() => {
-        console.log("object");
-    }, 1000);
-    console.log("我在这");
+    // setTimeout(() => {
+    //     console.log("object");
+    // }, 1000);
+    // console.log("我在这");
     // 我在这 -- object
 
     // promise 创建时即立即执行即同步任务，

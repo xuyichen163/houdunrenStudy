@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>await 加载进度条</title>
+    <style>
+        div {
+            height: 50px;
+            width: 0px;
+            background: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="loading">0%</div>
+    <style src="./js/ajax.js"></style>
+    <script>
+        async function query(name) {
+            // return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    console.log(name);
+                    resolve();
+                }, 1500);
+            });
+        }
+        (async () => {
+            let loading = document.getElementById("loading");
+            let user = ["后盾人", "向军", "李四", "王五", "赵六"];
+            for (let i = 0; i < user.length; i++) {
+                await query(user[i]);
+                let progress = ((i + 1) / user.length) * 100;
+                loading.style.width = progress + "%";
+                loading.innerHTML = Math.round(progress) + "%";
+            }
+        })();
+    </script>
 </body>
+
 </html>

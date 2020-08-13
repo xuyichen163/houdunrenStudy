@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>promise 异步加载图片</title>
 </head>
+
 <body>
-    
+    <script>
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const imag = new Image();
+                imag.src = src;
+                imag.onload = function () {
+                    resolve(imag);
+                };
+                imag.onerror = function () {
+                    reject();
+                }
+                document.body.appendChild(imag);
+            })
+        };
+        loadImage("./images/nighth.jpg").then(image => {
+            image.style.width = 500 + "px"
+        }, reason => {
+            console.log("failes");
+        })
+    </script>
 </body>
+
 </html>

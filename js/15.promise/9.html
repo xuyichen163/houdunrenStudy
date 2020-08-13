@@ -16,8 +16,9 @@
         // resolve("fulfilled");
         reject("rejected");
     });
-    new Promise((resolve, reject) => {
+    const p2 = new Promise((resolve, reject) => {
         // resolve("fullfilled");
+        //如果返回是promise 则会影响后面的状态
         resolve(p1);
     }).then(
         msg => {
@@ -27,6 +28,8 @@
             console.log(error+" 13");
         }
     )
+
+    //rejected 13
 </script>
 
 </html>

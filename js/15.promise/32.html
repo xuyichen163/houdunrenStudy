@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        //await
+        // 使用 await 关键词后会等待promise 完
+
+        // await 后面一般是promise，如果不是直接返回
+        // await 必须放在 async 定义的函数中使用
+        // await 用于替代 then 使编码更优雅
+
+        // async function hd() {
+        //     return new Promise(resolve => {
+        //         setTimeout(() => {
+        //             resolve("fulfilled");
+        //         }, 2000);
+        //     });
+        // }
+        // async function run() {
+        //     let value = await hd();
+        //     console.log("houdunren.com");
+        //     console.log(value);
+        // }
+        // run();
+
+        // 一般await后面是外部其它的promise对象
+        async function user() {
+            let user = await ajax(`http://localhost:8888/php/user.php?name=向军`);
+            let lessons = await ajax(
+                `http://localhost:8888/php/houdunren.php?id=${user.id}`
+            );
+            console.log(lessons);
+        }
+    </script>
 </body>
+
 </html>

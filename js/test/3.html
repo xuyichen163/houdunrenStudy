@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // async 不仅仅用于等 promise 对象，可以等任何表达式的结果
+        // async 将返回值 包装成一个 promise 对象
+        // function getSomething() {
+        //     return "something";
+        // };
+        // async function testAsync() {
+        //     return Promise.resolve("hello async");
+        // };
+        // async function test() {
+        //     const v1 = await getSomething();
+        //     const v2 = await testAsync();
+        //     console.log(v1, v2);
+        // };
+        // test()
+        //如果 async 等待的 不是一个 promise 对象 则运算结果就是 等到的东西
+        //如果 async 等待是一个peomise 对象，则阻塞后面的代码，等待Promise对象resolve，然后得到resolve的值 作为 await 的等待结果
+
+        function takeLongtime() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("long_time_value")
+                }, 1000);
+            })
+        }
+        takeLongtime().then(value => {
+            console.log("get", value);
+        })
+
+        //将最后then方法改写
+        // (async()=>{
+        //     let res = await takeLongtime();
+        //     console.log(res);
+        // })()
+
+        
+    </script>
+</body>
+
+</html>

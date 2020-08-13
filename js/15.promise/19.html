@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        // setTimeout(() => {
+        //     console.log("front");
+        // },1000);
+        console.time("run");
+        function timeout(delay = 1000) {
+            return new Promise(resolve => { 
+                setTimeout(resolve, delay);
+                console.log("timeout"); 
+            });
+        };
+
+        // timeout(3000).then(() => {
+        //     console.log("3秒后执行");
+        //     return timeout(1000);
+        // }).then(() => {
+        //     console.log("执行上一步的promise后1秒执行");
+        // })
+
+        (async () => {
+            const time1 = await timeout(3000);
+            console.log("3秒后执行");
+            const time2 = await timeout(1000);
+            console.log("执行上一步的promise后1秒执行");
+        })()
+        console.timeEnd("run");
+        console.log("object");
+
+    </script>
 </body>
+
 </html>

@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>async 和 await </title>
 </head>
+
 <body>
-    
+    <script>
+
+        // 使用 async/await 是promise 的语法糖，可以让编写 promise 更清晰易懂，也是推荐编写promise 的方式。
+
+        // async/await 本质还是promise，只是更简洁的语法糖书写
+        // async / await 使用更清晰的promise来替换 promise.then /catch 的方式
+
+        // new Promise(resolve =>{
+        //     console.log("object");
+        //     resolve("aaa");
+        // }).then( v=>{
+        //     console.log(v);
+        // })
+
+
+        // 下面在 hd 函数前加上async，函数将返回promise，
+        // 我们就可以像使用标准Promise一样使用了。
+        // async function hd() {
+        //     return "houucnren";
+        // }
+        // hd().then(v => console.log(v))
+
+        // 如果有多个await 需要排队执行完成，我们可以很方便的处理多个异步队列
+        async function hd(message) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(message);
+                }, 2000);
+            });
+        }
+        async function run() {
+            let h1 = await hd("后盾人");
+            console.log(1);
+            console.log(h1);
+            let h2 = await hd("houdunren.com");
+            console.log(h2);
+        }
+        run();
+        // 1 后盾人 houdunren.com
+    </script>
 </body>
+
 </html>

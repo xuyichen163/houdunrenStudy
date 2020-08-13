@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>async延迟函数</title>
 </head>
+
 <body>
-    
+    <script>
+        // 定时器  delay之后 改变promise状态
+        async function sleep(delay = 1000) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve();
+                }, delay);
+            })
+        }
+        async function run() {
+            for (const user of ["123", "321"]) {
+                await sleep();
+                console.log(user);
+            }
+        }
+        run();
+    </script>
 </body>
+
 </html>

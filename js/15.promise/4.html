@@ -19,12 +19,13 @@
     function loadJs(src, resolve) {
         let javascript = document.createElement("script");
         javascript.src = src;
-
+        //加载结束 执行resolve
         javascript.onload = resolve;
         document.body.appendChild(javascript);
         console.log(`${src} 加载成功`);
     }
 
+    //先加载 hd.js  再加载houcunren.js 
     loadJs("js/hd.js", () => {
         loadJs("js/houdunren.js", () => {
             houdunren();

@@ -11,6 +11,8 @@
 
 </body>
 <script>
+    //then 返回的也是一个promise  用户返回或系统自动返回
+    // 默认 then 返回的 promise 状态是 fulfilled
     new Promise((resolve, reject) => {
         resolve("你好");
     }).then(
